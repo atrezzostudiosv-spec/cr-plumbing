@@ -10,7 +10,7 @@ Actualizado: 2026-10-26
 | Home V1 en GitHub | EN VALIDACIÓN | `index.html` creado con fotografía y movimientos de scroll |
 | Páginas internas | PENDIENTE | 0 de 66 fichas implementadas |
 | QA responsive y funcional | NO COMPROBADO | No hay pruebas de navegador verificadas |
-| GitHub Pages | NO COMPROBADO | Pendiente de verificar configuración de publicación |
+| GitHub Pages | VERIFICADO (despliegue) | Workflow `pages build and deployment` #1 terminado correctamente; `main` → `/(root)`. Renderizado y carga de imágenes sin comprobar |
 | Entrega cliente | BLOQUEADA | Requiere aprobación visual, internas y QA |
 
 ## Decisiones vigentes
