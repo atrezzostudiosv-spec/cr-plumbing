@@ -79,3 +79,11 @@ Actualizado: 2026-10-26
 - Preserved category links within the four scenes, global navigation, service pages, header booking and Contact. Removed unused desktop/mobile CSS for the deleted directory.
 - Scoped change only to Home markup and associated obsolete CSS. No changes to pinned scroll animation, hero or internal pages.
 - Code structural validation completed; browser visual transition pending verification.
+
+## Home — genuine CR Plumbing story film (2026-10-26)
+- Supplied original video is 7m00s at 640x360 (source was 22 MB). We used only a lightweight 12-second silent teaser compressed to 269 KB plus an interview frame WebP poster (~33 KB).
+- The Home About section is now an editorial video feature. Desktop uses muted in-view-only teaser playback with pause control; tablet/mobile and reduced-motion use poster/play.
+- Clicking Watch Their Story opens a modal that embeds the full user-provided YouTube video `X-jxiA0HPFE`, loaded only on click, with accessible close and YouTube fallback link.
+- The Home hero, four cinematic service chapters, internal service pages and data are unchanged. No background full-length stream was installed.
+- Source file supplied by user; video identified as CR Plumbing company story from contents. Video reuse still subject to client's rights confirmation before production release.
+- **QA pending:** video playback in actual browsers at 375/768/1024/1440 px, YouTube embed and poster cropping. Do not report as tested without actual browser validation.
