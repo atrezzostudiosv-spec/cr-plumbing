@@ -41,3 +41,11 @@ Actualizado: 2026-10-26
 - La carga de las imágenes aún depende de URLs de crplumbingdfw.com; pendiente de migrar recursos originales a assets locales.
 - Pendiente QA visual en navegador real a 375,768,1024,1440px; no confundir inspección de código con pruebas responsive.
 - Galería, blog, privacy policy y otras corporativas requieren ampliación de contenido y verificación; no marcar como finalizadas.
+
+## Ajuste UX — Popup de solicitud (26/10/2026)
+- Implementado modal editorial compartido en `assets/request-modal.js` y `assets/request-modal.css` para Request Service y Book Online. No modifica el menú Contact ni las URLs individuales.
+- Autorrellena servicio desde el H1 de la página; incluye nombre, teléfono, ciudad, email opcional y descripción.
+- Accesibilidad implementada en código: cerrar por Escape, clic exterior, foco retenido y retorno al botón de apertura.
+- Acción real disponible: copiar los detalles para comunicarlos al equipo por teléfono. **NO hay envío a un servidor**, ni reserva confirmada; pendiente de integración autorizada.
+- Ajustado hero de páginas internas con `min-height` adaptativo y tamaños fluidos para evitar recorte del H1 mostrado en captura.
+- Aún falta revisión visual del popup en navegador a 375, 768, 1024, 1440 y prueba manual de copiado.
