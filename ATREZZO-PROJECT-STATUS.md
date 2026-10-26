@@ -5,12 +5,12 @@ Actualizado: 2026-10-26
 |---|---|---|
 | Auditoría original | CERRADA | Auditoría y HTML original recibidos |
 | Estrategia y arquitectura | CERRADA | Multipágina; 66 servicios más corporativas |
-| Copy de 66 servicios | EN VALIDACIÓN | Documento preparado; afirmaciones sujetas a última revisión |
-| Dirección cinematográfica V2.1 | EN VALIDACIÓN | Propuesta aprobable; falta validar resultado visual |
-| Home V1 en GitHub | EN VALIDACIÓN | 4 escenas de servicios, navegación corporativa y megamenú completo con links internos |
-| Páginas internas | EN VALIDACIÓN | 66 páginas de servicio, 12 corporativas + 3 alias/complementarias implementadas; contenido pendiente de revisión visual/editorial |
+| Copy de 66 servicios | IMPLEMENTADO / EN VALIDACIÓN | 66 fuentes HTML restauradas a sus URLs propias, con 544 FAQ; vigencia comercial por confirmar |
+| Dirección cinematográfica V2.1 | APROBADA (Home) | Usuario aprobó hero familiar, scroll de cuatro servicios y tratamiento fotográfico del Home |
+| Home | CERRADA — diseño | Composición aprobada por el usuario; no tocar sin nueva solicitud |
+| Páginas internas | IMPLEMENTADAS / EN VALIDACIÓN | 66 servicios originales + 11 corporativas rehechas; Reviews conservada y Privacy pendiente; alias auxiliares |
 | QA responsive y funcional | EN PROCESO | Verificados HTML/JS/rutas estáticas; renderizado de navegador real NO COMPROBADO |
-| GitHub Pages | VERIFICADO (despliegue) | Workflow `pages build and deployment` #1 terminado correctamente; `main` → `/(root)`. Renderizado y carga de imágenes sin comprobar |
+| GitHub Pages | VERIFICADO (despliegue) | Último flujo de Pages finalizó con éxito; pruebas visuales y recursos externos NO COMPROBADOS |
 | Entrega cliente | BLOQUEADA | Requiere aprobación visual, internas y QA |
 
 ## Decisiones vigentes
@@ -21,11 +21,12 @@ Actualizado: 2026-10-26
 - No incluir texto «demo», afirmaciones no acreditadas, reseñas falsas, licencias de relleno, ni falsa confirmación de formularios.
 - Material original fotográfico requiere validación de vigencia/derechos y traslado a assets locales.
 
-## Siguiente trabajo autorizado
-1. Validación visual del Home con capturas reales desktop/tablet/móvil.
-2. Ajustar composición únicamente donde haya problemas observados.
-3. Migrar fotografías al repositorio tras comprobar procedencia y calidad.
-4. Construir páginas internas una vez aprobada la base.
+## Siguientes controles de calidad
+1. Revisar las páginas internas en navegador real a 375, 768, 1024 y 1440 px; comprobar menú, hero, tipografía, FAQ, imágenes y accesibilidad.
+2. Detectar imágenes originales externas que deban trasladarse a assets locales y confirmar derechos/actualidad de fotografías del equipo.
+3. Importar el archivo de artículos del Blog (no estaba incluido en el ZIP) sin inventar textos.
+4. Obtener Privacy Policy original y aprobada; verificar términos actuales de CR Home Protection y financiación.
+5. Conectar formularios al servicio autorizado por el negocio y probar entrega real antes de afirmarla.
 
 ## Revisión de navegación y formularios — 2026-10-26
 - Menú: 66 servicios desde el documento original, 12 páginas corporativas, y tres rutas del menú antiguo (dos alias y una EV Charging Stations).

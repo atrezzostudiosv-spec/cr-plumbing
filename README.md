@@ -4,14 +4,14 @@ Rediseño visual basado en los recursos y el contenido del sitio original [crplu
 
 ## Estado actual
 
-- **Home V1 implementado en `index.html` — EN VALIDACIÓN VISUAL.**
+- **Home aprobado visualmente por el usuario. No modificar sin solicitud específica.**
 - Cuatro capítulos fotográficos (Plumbing, HVAC, Electrical y Gas), narrativa vertical y zoom suave al desplazarse.
 - Desktop y móvil con composiciones diferenciadas; se respetan las preferencias de movimiento reducido.
-- Menú móvil con estados accesibles, teléfono activo y enlaces comerciales dirigidos provisionalmente a las páginas originales del negocio.
-- **66 páginas de servicios y 12 internas corporativas implementadas como estructura navegable.** Aún requieren revisión editorial, visual y funcional individual; no equivalen a páginas finalizadas.
+- Menú con accesos a páginas internas propias; el código de navegación se conserva del Home aprobado.
+- **66 páginas de servicios reescritas desde los 66 HTML originales**, con secciones, FAQ y diseño editorial propio, y 11 páginas corporativas rediseñadas. Reviews conservada; Privacy Policy requiere texto legal acreditado. QA final pendiente.
 - No hay formulario falso ni supuesta confirmación de reserva.
 - Fotografía y logotipo enlazados temporalmente a archivos del website original: antes de la presentación final se deben copiar a `assets/`, comprobar derechos, actualidad, resolución y funcionamiento de las URLs.
-- GitHub Pages y pruebas de renderizado responsive: pendientes de comprobar.
+- **GitHub Pages publicado correctamente.** Renderizado responsive, imágenes externas, formularios y accesibilidad requieren QA real.
 
 ## Principios obligatorios
 
@@ -37,3 +37,12 @@ Estos documentos aún no se han incorporado al repositorio. No confundir el esta
 - Las entradas de los formularios NO se envían: para captación real se requiere servidor o una integración autorizada. Se ofrece llamada directa verificada.
 - Alias locales para 2 rutas antiguas del menú que actualmente redirigen en el sitio original.
 - Revisar fotografía y fidelidad del contenido antes de presentación al propietario.
+
+## Migración de contenido — Octubre 2026
+Se recuperaron 66 páginas originales de servicios, sus secciones editoriales y 544 preguntas frecuentes. Se añadieron 14 perfiles publicados por CR, cinco descripciones de vacantes en el portal Zoho y 94 URL únicas de fotografías propias de CR en Gallery.
+
+Revisa el informe [ATREZZO-CR-MIGRATION-AUDIT.md](./ATREZZO-CR-MIGRATION-AUDIT.md) antes de dar por terminada una página.
+
+**Límites:** artículos individuales del Blog fuera del ZIP; política legal no acreditada; datos de plantilla de formularios no se transmiten a un servidor; fotos alojadas en el dominio WordPress original; vigencia de equipo, servicios comerciales y vacantes pendiente de confirmación.
+
+Se incluye `noindex,nofollow` en páginas de la presentación para impedir que el sitio en Pages se presente en buscadores como sede oficial mientras no se autorice la publicación.
