@@ -40,6 +40,51 @@
     });
     root.querySelectorAll('details.cr-job .cr-job-plus').forEach(el=>{el.innerHTML=svg('plus')});
   };
+  // Career descriptions arrive in the source archive as single uninterrupted strings.
+  // Restore heading/paragraph hierarchy while preserving their textContent byte for byte.
+  const jobHeadings = [
+    'MINIMUM QUALIFICATIONS (KNOWLEDGE, SKILLS, AND ABILITIES)',
+    'PHYSICAL DEMANDS AND WORK ENVIRONMENT',
+    'JOB DUTIES AND RESPONSIBILITIES',
+    'WHAT SEPARATES OUR TOP ELECTRICIANS',
+    'WHAT YOU\u2019LL BE DOING', 'WHAT YOU’LL BE DOING',
+    'WHAT WE\u2019RE LOOKING FOR', 'WHAT WE’RE LOOKING FOR',
+    'PERFORMANCE EXPECTATIONS','WHO THIS IS NOT FOR',
+    'POSITION SUMMARY','MINIMUM QUALIFICATIONS',
+    'READ THIS FIRST','GROWTH PATH',
+    'WHAT YOU WILL DO','REQUIREMENTS','RESPONSIBILITIES',
+    'COMPENSATION','BENEFITS','QUALIFICATIONS',
+    'WORK ENVIRONMENT'
+  ];
+  const safeReg = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  // Prefix word boundaries prevent matching common running text.
+  const jobRx = new RegExp('(?:'+jobHeadings.map(safeReg).join('|')+')','g');
+  document.querySelectorAll('.cr-job-body').forEach(container => {
+    if(container.dataset.crFormatted)return;
+    const original=container.textContent;
+    const matches=[...original.matchAll(jobRx)];
+    if(matches.length<2)return;
+    const wrap=document.createDocumentFragment();
+    let from=0;
+    const appendText=raw=>{
+      if(!raw)return;
+      const items=raw.split(/(?=•)/);
+      for(const item of items){
+        if(!item)continue;
+        const p=document.createElement('p');
+        p.className=item.startsWith('•')?'cr-job-point':'cr-job-copy';
+        p.textContent=item;wrap.appendChild(p);
+      }
+    };
+    for(const m of matches){
+      appendText(original.slice(from,m.index));
+      const h=document.createElement('h4');h.className='cr-job-subhead';h.textContent=m[0];
+      wrap.appendChild(h);from=m.index+m[0].length;
+    }
+    appendText(original.slice(from));
+    // Literal text equality is a safety check, not an approximation.
+    if(wrap.textContent===original){container.replaceChildren(wrap);container.dataset.crFormatted='1'}
+  });
   // No information is removed from the source; only decorative arrow glyphs are
   // replaced with consistent scalable icon drawings.
   addIcons(document);
@@ -52,6 +97,8 @@
   const sections=[...main.querySelectorAll('.cr-detail-band')];
   if(!hero||!sections.length)return; // Corporate and utility pages keep their own structures.
 
+  const categoryForIcon=hero.classList.contains('cr-page-hero--plumbing')?'droplets':hero.classList.contains('cr-page-hero--hvac')?'wind':hero.classList.contains('cr-page-hero--electrical')?'zap':'flame';
+  hero.querySelector('.cr-hero-kicker')?.insertAdjacentHTML('afterbegin',svg(categoryForIcon)+' ');
   // Group dense content by its structure. The text nodes, order, headings and
   // paragraphs remain identical; we never truncate or collapse informational copy.
   sections.forEach((section,i)=>{
@@ -107,7 +154,7 @@
       let mode=assets.length===1?'single':(num%2===0?'focus':'pair');
       section.className='cr-service-media cr-service-media--'+mode+(group==='gas'||group==='electrical'?' cr-service-media--warm':'')+' cr-x-reveal';
       section.setAttribute('aria-label','Service photographs from the company website');
-      section.innerHTML=`<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">SERVICE PHOTOGRAPHY / ${group.toUpperCase()}</span><h2>A CLOSER<br>LOOK.</h2><p>Photographs published by CR Plumbing, used here to illustrate the service.</p></div>${assets.map((x,i)=>`<figure class="cr-media-figure"><div class="cr-media-frame"><img loading="lazy" decoding="async" width="${x.width}" height="${x.height}" alt="${escAttr(x.alt)}" src="${x.url}"></div><figcaption>Service image / ${String(i+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div>`;
+      section.innerHTML=`<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">SERVICE PHOTOGRAPHY / ${group.toUpperCase()}</span><h2>A CLOSER<br>LOOK.</h2><p>Photographs from CR Plumbing's original service page. They illustrate the service described above.</p></div>${assets.map((x,i)=>`<figure class="cr-media-figure"><div class="cr-media-frame"><img loading="lazy" decoding="async" width="${x.width}" height="${x.height}" alt="${escAttr(x.alt)}" src="${x.url}"></div><figcaption>Service image / ${String(i+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div>`;
       const insertAfter=sections.length>=3?sections[1]:sections[0];
       insertAfter.insertAdjacentElement('afterend',section);
       if(motionOff.matches || !('IntersectionObserver' in window)){section.classList.add('is-visible')}
