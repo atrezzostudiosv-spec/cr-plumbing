@@ -87,3 +87,10 @@ Actualizado: 2026-10-26
 - The Home hero, four cinematic service chapters, internal service pages and data are unchanged. No background full-length stream was installed.
 - Source file supplied by user; video identified as CR Plumbing company story from contents. Video reuse still subject to client's rights confirmation before production release.
 - **QA pending:** video playback in actual browsers at 375/768/1024/1440 px, YouTube embed and poster cropping. Do not report as tested without actual browser validation.
+
+## Home — story film proportion and background refinement (26/10/2026)
+- Approved company-story video, full-film modal and text preserved. Only `assets/story-film.css` changed for visual balance.
+- Background changed from plain white to a very light slate-blue gradient spanning the complete section width (not a boxed card).
+- Desktop editorial grid adjusted from 1.17 / .83 to 1.08 / .92 for more text room; gap reduced, headline font scaled down and whitespace tightened. Film remains the visual lead with a subtle shadow.
+- Tablet/mobile spacing adapted; mobile remains text first, poster/video below.
+- GitHub Pages deployment for CSS commit `b6ede9a` succeeded. **Actual browser rendering at 375/768/1024/1440 and playback still NOT COMPROBADO** due unavailable live browser access. Screenshot from client used for design diagnosis.
