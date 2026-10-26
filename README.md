@@ -8,7 +8,7 @@ Rediseño visual basado en los recursos y el contenido del sitio original [crplu
 - Cuatro capítulos fotográficos (Plumbing, HVAC, Electrical y Gas), narrativa vertical y zoom suave al desplazarse.
 - Desktop y móvil con composiciones diferenciadas; se respetan las preferencias de movimiento reducido.
 - Menú móvil con estados accesibles, teléfono activo y enlaces comerciales dirigidos provisionalmente a las páginas originales del negocio.
-- **Las 66 páginas de servicios y las internas corporativas aún no están implementadas.** Se construirán después de aprobar la dirección visual del Home.
+- **66 páginas de servicios y 12 internas corporativas implementadas como estructura navegable.** Aún requieren revisión editorial, visual y funcional individual; no equivalen a páginas finalizadas.
 - No hay formulario falso ni supuesta confirmación de reserva.
 - Fotografía y logotipo enlazados temporalmente a archivos del website original: antes de la presentación final se deben copiar a `assets/`, comprobar derechos, actualidad, resolución y funcionamiento de las URLs.
 - GitHub Pages y pruebas de renderizado responsive: pendientes de comprobar.
@@ -30,3 +30,10 @@ Rediseño visual basado en los recursos y el contenido del sitio original [crplu
 - ZIP original de CR Plumbing, más comprobación de enlaces en el sitio público.
 
 Estos documentos aún no se han incorporado al repositorio. No confundir el estado de los documentos con páginas implementadas.
+
+## Actualización — Estructura y formularios
+- Menú desktop y móvil enlazado a fichas internas en este repositorio (sin enviar a la web original).
+- Servicio de contacto `/contact-us/` y preparación de solicitud `/book-online/`.
+- Las entradas de los formularios NO se envían: para captación real se requiere servidor o una integración autorizada. Se ofrece llamada directa verificada.
+- Alias locales para 2 rutas antiguas del menú que actualmente redirigen en el sitio original.
+- Revisar fotografía y fidelidad del contenido antes de presentación al propietario.
