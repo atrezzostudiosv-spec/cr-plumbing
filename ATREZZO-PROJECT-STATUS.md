@@ -65,3 +65,10 @@ Actualizado: 2026-10-26
 - `assets/services-story.css`: recorrido de escenario anclado ampliado a 540svh en desktop y 510svh en tablet.
 - Móvil <= 760 px y usuarios con movimiento reducido conservan escenas apiladas sin zoom ni pin.
 - **EN VALIDACIÓN VISUAL:** verificación estática de código completada; probar desplazamiento en navegador real y confirmar contraste/recorte de las fotos antes de cerrar.
+
+## New family photograph — 2026-10-26
+- Supplied family portrait optimized to WebP at 1200x675 (43.8 KB), stored under `assets/images/cr-family-portrait.webp`.
+- Family photo now appears in Home hero, About hero, Meet Our Team hero, and the Home family section. A smaller authentic team image accompanies the Home family feature.
+- Desktop: wide portrait to the right, dark copy area on the left. At <=1100 px: text and CTAs above a 1.6:1 image; at <=760px: 1.37:1 right-aligned crop retaining all six people.
+- Scoped `assets/family-hero.css` applies to these areas only. Previously approved four-service scroll effect unchanged.
+- Responsive visual browser QA at 375, 768, 1024, and 1440px remains pending until verified.
