@@ -10,6 +10,6 @@ if (!document.querySelector('script[data-cr-request-modal]')) {
 
 /* Atrezzo internal-page experience, never load on approved Home. */
 if(document.body?.classList.contains('cr-detail')){
-  const layer=document.createElement('link');layer.rel='stylesheet';layer.href='/cr-plumbing/assets/interior-experience.css?v=20261026-02';document.head.appendChild(layer);
-  const module=document.createElement('script');module.src='/cr-plumbing/assets/interior-experience.js?v=20261026-02';module.defer=true;document.body.appendChild(module);
+  const layer=document.createElement('link');layer.rel='stylesheet';layer.href='/cr-plumbing/assets/interior-experience.css?v=20261026-03';document.head.appendChild(layer);
+  const module=document.createElement('script');module.src='/cr-plumbing/assets/interior-experience.js?v=20261026-03';module.defer=true;document.body.appendChild(module);
 }
