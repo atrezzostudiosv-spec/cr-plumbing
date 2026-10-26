@@ -34,3 +34,19 @@
 .internal-contact{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:7vw}.service-form{background:#ecf3f5;padding:clamp(25px,4vw,55px);display:grid;gap:16px}.service-form label{font-size:.74rem;text-transform:uppercase;font-weight:800;letter-spacing:.08em;display:grid;gap:7px}.service-form input,.service-form select,.service-form textarea{display:block;background:#fff;color:var(--ink);border:1px solid #bdcbce;border-radius:0;padding:14px;font:500 .89rem/1.5 Manrope,sans-serif;width:100%;min-width:0}.service-form textarea{resize:vertical}.service-form .btn{border:0;cursor:pointer}.form-note{font-size:.8rem;color:#536971;margin:0}.form-feedback{font-size:.88rem;padding:12px 14px;border-left:3px solid var(--orange);background:white;color:var(--ink);display:none}.form-feedback.show{display:block}
 .internal-points{display:flex;flex-wrap:wrap;gap:10px}.internal-points span{border:1px solid #c5d3d5;padding:10px 16px;font-size:.86rem;font-weight:700}
 @media(min-width:1101px){.mobile-nav{display:none!important}}@media(max-width:1100px){.mega-menu{display:none}.inner-grid{grid-template-columns:1fr}.inner-aside{margin-top:10px}.mobile-nav.open{display:block}}@media(max-width:760px){.inner-hero{min-height:530px;padding:85px var(--edge) 70px}.inner-hero h1{font-size:clamp(3.7rem,15vw,6rem)}.inner-grid,.internal-contact{grid-template-columns:1fr}.internal-directory{grid-template-columns:1fr}.inner-actions .btn{width:100%}.mega-columns{grid-template-columns:1fr}}
+
+
+/* Allow long inner-service headlines to expand naturally without being cut off beneath the sticky header. */
+.inner-hero {
+  min-height: clamp(570px,78svh,960px);
+  height: auto;
+  align-items: flex-end;
+  padding-top: clamp(105px,9vw,165px);
+  padding-bottom: clamp(65px,7vw,120px);
+}
+.inner-hero-content { margin: 0 auto; align-self: flex-end; }
+.inner-hero h1 { font-size: clamp(3.7rem,7vw,6.75rem); overflow-wrap: normal; }
+@media(max-width:760px) {
+  .inner-hero { min-height: 560px; padding-top: 115px; padding-bottom: 70px; }
+  .inner-hero h1 { font-size: clamp(3.6rem,12.5vw,5.8rem); }
+}
