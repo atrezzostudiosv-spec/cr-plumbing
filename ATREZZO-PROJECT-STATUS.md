@@ -94,3 +94,10 @@ Actualizado: 2026-10-26
 - Desktop editorial grid adjusted from 1.17 / .83 to 1.08 / .92 for more text room; gap reduced, headline font scaled down and whitespace tightened. Film remains the visual lead with a subtle shadow.
 - Tablet/mobile spacing adapted; mobile remains text first, poster/video below.
 - GitHub Pages deployment for CSS commit `b6ede9a` succeeded. **Actual browser rendering at 375/768/1024/1440 and playback still NOT COMPROBADO** due unavailable live browser access. Screenshot from client used for design diagnosis.
+
+## Home + Reviews — real customer reputation (26 October 2026)
+- Rebuilt the dark Home reputation section with a 4.8/5 Google rating (Argyle business profile) and exact 96%-filled visual stars, prominent Google review CTA, plus 1,200+ customer reviews **company reported**.
+- Verification guardrail: 4.8/5 rating from external Argyle listing; 1,200+ count is published on CR's own review page and links to Google, but is NOT independently verified as the number on the single Argyle Google listing. The distinction is explicit in the design.
+- Rebuilt local `/reviews/` page with the same rating graphic, three short, attributed customer quotes published by CR (Jim W., Lauren S., Jenn F.), plus Google and local contact links; no fabricated testimonials.
+- Dedicated scoped stylesheet `assets/reputation.css`; Home and Reviews CSS links versioned to prevent stale caches. No changes to the approved hero, cinematic service chapters or story video.
+- **QA EN VALIDACIÓN:** HTML, content sources and internal destinations verified. Actual browser visual tests at desktop/tablet/mobile not independently completed.
