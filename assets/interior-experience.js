@@ -107,7 +107,7 @@
       let mode=assets.length===1?'single':(num%2===0?'focus':'pair');
       section.className='cr-service-media cr-service-media--'+mode+(group==='gas'||group==='electrical'?' cr-service-media--warm':'')+' cr-x-reveal';
       section.setAttribute('aria-label','Service photographs from the company website');
-      section.innerHTML=`<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">SERVICE PHOTOGRAPHY / ${group.toUpperCase()}</span><h2>A CLOSER<br>LOOK.</h2><p>Photographs from CR Plumbing's original service page. They illustrate the service described above.</p></div>${assets.map((x,i)=>`<figure class="cr-media-figure"><div class="cr-media-frame"><img loading="lazy" decoding="async" width="${x.width}" height="${x.height}" alt="${escAttr(x.alt)}" src="${x.url}"></div><figcaption>Service image / ${String(i+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div>`;
+      section.innerHTML=`<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">SERVICE PHOTOGRAPHY / ${group.toUpperCase()}</span><h2>A CLOSER<br>LOOK.</h2><p>Photographs published by CR Plumbing, used here to illustrate the service.</p></div>${assets.map((x,i)=>`<figure class="cr-media-figure"><div class="cr-media-frame"><img loading="lazy" decoding="async" width="${x.width}" height="${x.height}" alt="${escAttr(x.alt)}" src="${x.url}"></div><figcaption>Service image / ${String(i+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div>`;
       const insertAfter=sections.length>=3?sections[1]:sections[0];
       insertAfter.insertAdjacentElement('afterend',section);
       if(motionOff.matches || !('IntersectionObserver' in window)){section.classList.add('is-visible')}
