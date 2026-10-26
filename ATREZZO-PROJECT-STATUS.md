@@ -101,3 +101,12 @@ Actualizado: 2026-10-26
 - Rebuilt local `/reviews/` page with the same rating graphic, three short, attributed customer quotes published by CR (Jim W., Lauren S., Jenn F.), plus Google and local contact links; no fabricated testimonials.
 - Dedicated scoped stylesheet `assets/reputation.css`; Home and Reviews CSS links versioned to prevent stale caches. No changes to the approved hero, cinematic service chapters or story video.
 - **QA EN VALIDACIÓN:** HTML, content sources and internal destinations verified. Actual browser visual tests at desktop/tablet/mobile not independently completed.
+
+## Home Reputation — cinematic genuine photo background (2026-10-26)
+- Access to `atrezzostudiosv-spec/cr-plumbing` verified with admin/write permissions.
+- User approved cinematic background for Home reputation, inspired aesthetically by a separate Atrezzo project (308 Construction), without copying assets.
+- Genuine company photo from original CR Plumbing's Photo Gallery archive: `185663731_306432500981437_536251463581769371_n.2205242035550.jpg`, showing two CR-uniformed technicians holding tools by a company vehicle. Optimized as `assets/images/cr-reputation-team.webp` (665×666 px, 90.6 KB). Photo is historical/archival; no representation about present employment.
+- Scoped stylesheet `assets/reputation-photo.css` adds background on right with navy gradients, no decorative cards. `assets/reputation-photo.js` provides a scroll-linked 6.5% subtle push-in, respecting reduced motion.
+- Existing 4.8/5 Argyle Google rating and company-reported 1,200+ reviews remain distinct and unaltered; original Reviews internal page, links and CTA unchanged.
+- Only `index.html`, new Home-specific CSS/JS, background photo and this status file changed. Hero, services scenes, family story video, and internal services untouched.
+- QA: source image, repository commits, CSS/JS and deployment can be verified; browser visual responsive performance still requires explicit testing, not assumed.

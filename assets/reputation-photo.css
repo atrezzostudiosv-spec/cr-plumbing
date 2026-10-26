@@ -1,0 +1,75 @@
+/* CR — genuine archive photograph from the company's original photo gallery.
+   HOME Reputation only: keep the internal Reviews page unchanged. */
+#reviews.cr-reputation-photo {
+  position:relative;
+  isolation:isolate;
+  min-height:clamp(735px,89svh,990px);
+  display:flex;
+  align-items:center;
+  background:#0b1b28;
+  overflow:hidden;
+  padding-block:clamp(85px,9vw,145px);
+}
+/* Real CR technicians with uniform and van; photo is confined to right side,
+   but reads as a cinematic full-bleed background instead of a separate card. */
+#reviews.cr-reputation-photo::before {
+  content:"";position:absolute;inset:0 0 0 35%;
+  display:block;width:auto;height:auto;border:0;border-radius:0;
+  box-shadow:none;
+  background-image:url("/cr-plumbing/assets/images/cr-reputation-team.webp");
+  background-size:cover;background-position:center 36%;background-repeat:no-repeat;
+  transform:scale(var(--rep-zoom,1.035));
+  transform-origin:60% 40%;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 29%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 29%);
+  z-index:-2;pointer-events:none;
+}
+#reviews.cr-reputation-photo::after {
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,
+    #0b1b28fa 0%,#0b1b28ee 27%,#0b1b28d2 50%,
+    #0b1b28a8 72%,#0b1b28a4 100%),
+    linear-gradient(0deg,#0b1b28cf 0%,transparent 45%,#0b1b2855 100%);
+  z-index:-1;pointer-events:none;
+}
+#reviews.cr-reputation-photo .cr-rating-inner{width:100%;position:relative;z-index:2}
+#reviews.cr-reputation-photo .cr-rating-heading h2{font-size:clamp(4rem,5.9vw,6.6rem)}
+#reviews.cr-reputation-photo .cr-rating-proof{
+  border-color:rgba(215,238,247,.53);
+  text-shadow:0 2px 21px rgba(0,0,0,.38);
+}
+#reviews.cr-reputation-photo .cr-rating-value{font-size:clamp(7.4rem,13vw,13.4rem)}
+#reviews.cr-reputation-photo .cr-rating-google-cta{text-shadow:none;max-width:450px}
+#reviews.cr-reputation-photo .cr-rating-note{color:#d0dfe5!important;text-shadow:0 1px 15px #0b1b28}
+#reviews.cr-reputation-photo .cr-rating-heading p{color:#e5edef}
+@media (max-width:1100px) {
+  #reviews.cr-reputation-photo{min-height:0;padding-block:92px}
+  #reviews.cr-reputation-photo::before{inset:0 0 0 25%;background-position:55% 30%}
+  #reviews.cr-reputation-photo .cr-rating-inner{gap:50px}
+  #reviews.cr-reputation-photo .cr-rating-heading h2{font-size:clamp(4rem,6.6vw,6rem)}
+}
+@media (max-width:760px) {
+  #reviews.cr-reputation-photo{min-height:0;padding:85px var(--edge) 92px}
+  #reviews.cr-reputation-photo::before{
+    inset:0;
+    background-position:64% 24%;
+    -webkit-mask-image:none;mask-image:none;
+    transform:scale(1.04);
+    opacity:.68;
+  }
+  #reviews.cr-reputation-photo::after{
+    background:linear-gradient(180deg,
+      #0b1b28d8 0%,#0b1b28d1 32%,#0b1b28f4 57%,#0b1b28 84%);
+  }
+  #reviews.cr-reputation-photo .cr-rating-inner{gap:38px}
+  #reviews.cr-reputation-photo .cr-rating-heading h2{
+    font-size:clamp(3.9rem,12vw,6rem);
+    margin-bottom:24px;
+  }
+  #reviews.cr-reputation-photo .cr-rating-value{font-size:clamp(7.5rem,24vw,12rem)}
+  #reviews.cr-reputation-photo .cr-rating-proof{background:none}
+  #reviews.cr-reputation-photo .cr-rating-note{color:#b9cdd5!important}
+}
+@media (prefers-reduced-motion:reduce) {
+  #reviews.cr-reputation-photo::before{transform:none!important;will-change:auto!important}
+}
