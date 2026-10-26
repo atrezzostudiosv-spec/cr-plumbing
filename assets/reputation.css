@@ -1,0 +1,54 @@
+/* ATREZZO / CR Plumbing — verified reputation presentation. */
+.cr-rating-section{background:#0b1b28;color:#fff;position:relative;isolation:isolate;overflow:hidden;padding:clamp(85px,9vw,150px) var(--edge)}
+.cr-rating-section:before{content:"";position:absolute;width:clamp(520px,70vw,1180px);height:clamp(520px,70vw,1180px);right:-35%;top:-80%;border:1px solid rgba(255,255,255,.06);border-radius:50%;box-shadow:0 0 0 110px rgba(255,255,255,.012),0 0 0 260px rgba(255,255,255,.012);z-index:-1;pointer-events:none}
+.cr-rating-inner{max-width:1450px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.85fr);gap:clamp(70px,9vw,170px);align-items:center}
+.cr-rating-heading .eyebrow{color:#22c6d2;margin-bottom:28px}
+.cr-rating-heading h2{font-family:"Barlow Condensed",Impact,sans-serif;font-size:clamp(4rem,6.1vw,7rem);line-height:.88;font-weight:700;letter-spacing:-.025em;margin:0 0 29px;text-transform:uppercase;max-width:850px}
+.cr-rating-heading h2 em{font-style:normal;color:#21c3d1}
+.cr-rating-heading p{font-size:clamp(.92rem,1.2vw,1.07rem);line-height:1.85;color:#bdcdd4;max-width:510px;margin:0 0 30px}
+.cr-rating-heading a.cr-rating-text-link{display:inline-flex;gap:32px;align-items:center;font-weight:800;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#fff;border-bottom:1px solid #88a4b3;padding:0 0 12px;transition:color .2s}
+.cr-rating-heading a.cr-rating-text-link:hover{color:#23d3df}
+.cr-rating-proof{border-top:1px solid rgba(195,220,229,.4);border-bottom:1px solid rgba(195,220,229,.4);padding:31px 0 26px;min-width:0}
+.cr-rating-source{display:flex;gap:16px;align-items:center;margin-bottom:20px}
+.cr-google-g{display:inline-flex;flex:none;align-items:center;justify-content:center;width:48px;height:48px;border-radius:50%;font:bold 2.2rem/1 Arial,sans-serif;letter-spacing:-.06em;color:transparent;background:linear-gradient(35deg,#34a853 0%,#34a853 23%,#4285f4 23%,#4285f4 55%,#ea4335 55%,#ea4335 77%,#fbbc05 77%);-webkit-background-clip:text;background-clip:text}
+.cr-rating-source strong{font-size:.8rem;text-transform:uppercase;letter-spacing:.13em;color:#fff;line-height:1.55}
+.cr-rating-source strong span{color:#98bac6;display:block;font-size:.62rem;letter-spacing:.18em}
+.cr-rating-number{display:flex;align-items:baseline;gap:13px;line-height:.8;white-space:nowrap}
+.cr-rating-value{font:700 clamp(7rem,13.7vw,14.1rem)/.86 "Barlow Condensed",Impact,sans-serif;letter-spacing:-.05em;font-variant-numeric:lining-nums tabular-nums}
+.cr-rating-outof{font:600 clamp(1.3rem,2vw,2rem)/1 "Barlow Condensed",sans-serif;letter-spacing:.04em;color:#b4ced6}
+.cr-stars{position:relative;display:inline-block;font-size:clamp(1.8rem,3.1vw,2.8rem);font-family:Arial,sans-serif;letter-spacing:.1em;line-height:1.2;white-space:nowrap;color:#50616b;margin:18px 0 23px}
+.cr-stars::before{content:"★★★★★";position:absolute;inset:0 auto 0 0;display:block;width:96%;overflow:hidden;white-space:nowrap;color:#f3b633}
+.cr-rating-google-cta{display:flex;justify-content:space-between;align-items:center;gap:18px;width:100%;max-width:490px;min-height:57px;padding:15px 20px;background:white;color:#0b1b28;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.cr-rating-google-cta:hover{background:#f3b633}
+.cr-rating-google-cta span:last-child{font-size:1.45rem;line-height:1}
+.cr-rating-separator{height:1px;background:rgba(195,220,229,.3);margin:30px 0 21px}
+.cr-rating-volume{display:flex;align-items:center;gap:24px}
+.cr-rating-volume strong{font:700 clamp(3.3rem,5.8vw,6rem)/.87 "Barlow Condensed",Impact,sans-serif;letter-spacing:-.03em;white-space:nowrap}
+.cr-rating-volume p{font-size:.67rem;text-transform:uppercase;font-weight:800;letter-spacing:.1em;color:#e1eff2;line-height:1.5;margin:0}
+.cr-rating-volume small{font-size:.62rem;display:block;font-weight:500;letter-spacing:0;color:#9db3bc;text-transform:none;margin-top:5px}
+.cr-rating-note{font-size:.62rem!important;line-height:1.65!important;color:#95aeb9!important;max-width:430px!important;margin:24px 0 0!important}
+.cr-review-page .inner-hero{min-height:clamp(440px,63svh,650px)}
+.cr-review-page .inner-hero>img{opacity:.2}
+.cr-review-page .inner-hero:after{background:linear-gradient(90deg,#0b1b28 0%,#0b1b28d9 67%,#0b1b2877)}
+.cr-review-page .inner-hero h1{max-width:960px}
+.cr-review-page-main{padding:clamp(70px,8vw,120px) var(--edge);max-width:1500px;margin:0 auto}
+.cr-review-page-main .review-intro{font-size:clamp(1rem,1.6vw,1.3rem);max-width:710px;color:#47616c;line-height:1.7}
+.cr-review-page .cr-rating-section{margin-top:35px;padding:clamp(55px,6vw,85px);border-radius:0}
+.cr-review-page .cr-rating-inner{grid-template-columns:minmax(0,.7fr) minmax(0,1fr);gap:clamp(35px,5vw,80px)}
+.cr-review-page .cr-rating-heading h2{font-size:clamp(3rem,4.5vw,5.4rem)}
+.cr-review-stories{padding:clamp(75px,8vw,125px) 0 20px;max-width:1450px;margin:auto}
+.cr-review-stories>header{display:flex;align-items:end;justify-content:space-between;gap:24px;border-bottom:1px solid #c3d5da;padding-bottom:25px;margin-bottom:27px}
+.cr-review-stories .eyebrow{color:#075b95}
+.cr-review-stories h2{font-size:clamp(3.2rem,5vw,5.7rem);margin:16px 0 0}
+.cr-review-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,42px)}
+.cr-review-quote{margin:0;padding:25px 0 20px;border-bottom:1px solid #c3d5da}
+.cr-review-quote::before{content:"“";font:700 4rem/.6 "Barlow Condensed",sans-serif;color:#0876a5}
+.cr-review-quote blockquote{margin:15px 0 21px;font:700 clamp(1.6rem,2.3vw,2.9rem)/1.06 "Barlow Condensed",sans-serif;text-transform:uppercase;color:#152936}
+.cr-review-quote figcaption{font-size:.76rem;font-weight:800;letter-spacing:.08em;color:#446371;text-transform:uppercase}
+.cr-review-source-note{font-size:.77rem;color:#5e7480;line-height:1.7;margin:30px 0}
+.cr-review-bottom-actions{display:flex;flex-wrap:wrap;gap:15px}
+.cr-review-bottom-actions .btn{gap:20px}
+@media(max-width:1100px){.cr-rating-inner{gap:55px;grid-template-columns:minmax(0,1fr) minmax(0,.9fr)}.cr-rating-heading h2{font-size:clamp(4.1rem,7vw,6rem)}.cr-rating-value{font-size:clamp(7.1rem,13vw,10rem)}.cr-review-page .cr-rating-inner{gap:45px}.cr-review-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.cr-rating-section{padding:85px var(--edge)}.cr-rating-inner,.cr-review-page .cr-rating-inner{grid-template-columns:1fr;gap:45px}.cr-rating-heading h2{font-size:clamp(4rem,12.8vw,6.2rem);max-width:600px}.cr-rating-proof{padding-top:28px}.cr-rating-value{font-size:clamp(8rem,24vw,12rem)}.cr-rating-volume strong{font-size:clamp(3.7rem,13vw,6rem)}.cr-review-page .cr-rating-section{padding:55px var(--edge);margin-top:30px}.cr-review-page .cr-rating-heading h2{font-size:clamp(3.3rem,11vw,5.5rem)}.cr-review-grid{grid-template-columns:1fr}.cr-review-quote{padding:22px 0 27px}.cr-review-stories>header{display:block}.cr-review-page-main{padding:60px var(--edge)}.cr-review-stories{padding:75px 0 20px}}
+@media(max-width:380px){.cr-rating-source{gap:10px}.cr-rating-google-cta{font-size:.64rem;padding:13px}.cr-rating-volume{gap:16px}.cr-rating-value{font-size:26vw}}
+@media(prefers-reduced-motion:reduce){.cr-rating-heading a.cr-rating-text-link{transition:none}}
