@@ -33,3 +33,11 @@ Actualizado: 2026-10-26
 - Las fotografías todavía se solicitan desde el dominio original: falta migración de imágenes al repositorio.
 - Contact y Book Online contienen formularios HTML con validación de navegador; NO TRANSMITEN datos sin una integración consentida del propietario.
 - La presentación no contiene avisos generales de «demo»; los formularios no muestran falsas confirmaciones.
+
+## Cierre provisional de esta iteración — 26/10/2026
+- GitHub contiene 86 páginas HTML: Home + 66 fichas del paquete de servicios + 12 corporativas + Book Online + seis rutas de menú ampliadas/alias.
+- Menú desktop/móvil enlaza dentro de este repositorio; Home sin enlaces navegacionales salientes al sitio original.
+- Contact y Book Online recogen datos localmente, validan campos y permiten copiar los detalles para comunicarlos por teléfono. NO existe un servicio de recepción ni envíos automáticos.
+- La carga de las imágenes aún depende de URLs de crplumbingdfw.com; pendiente de migrar recursos originales a assets locales.
+- Pendiente QA visual en navegador real a 375,768,1024,1440px; no confundir inspección de código con pruebas responsive.
+- Galería, blog, privacy policy y otras corporativas requieren ampliación de contenido y verificación; no marcar como finalizadas.
