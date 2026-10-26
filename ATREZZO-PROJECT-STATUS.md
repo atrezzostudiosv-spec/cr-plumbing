@@ -110,3 +110,13 @@ Actualizado: 2026-10-26
 - Existing 4.8/5 Argyle Google rating and company-reported 1,200+ reviews remain distinct and unaltered; original Reviews internal page, links and CTA unchanged.
 - Only `index.html`, new Home-specific CSS/JS, background photo and this status file changed. Hero, services scenes, family story video, and internal services untouched.
 - QA: source image, repository commits, CSS/JS and deployment can be verified; browser visual responsive performance still requires explicit testing, not assumed.
+
+## Internal-page content migration — October 26 2026
+- All 66 source-backed service pages replaced with their own source-aligned editorial content, including 544 FAQs found in original HTML.
+- 11 corporate/contact pages redesigned and populated where the original archive or source copy supported the information. Reviews remained as previously approved; Home was not modified.
+- Team listing: 14 people shown with names, roles and original photo URLs (current roster requires confirmation).
+- Careers: 5 source-archived job descriptions, authentic Zoho Recruit application destinations; openings not independently verified as current.
+- Gallery: 94 unique verified original image URLs from 108 original gallery figures, with progressively revealed lazy media.
+- Blog articles absent from supplied ZIP, although separately published on current website. Article-by-article migration remains outstanding.
+- Privacy Policy original full text missing; pending legal approval.
+- New file `ATREZZO-CR-MIGRATION-AUDIT.md` maps service pages to their original filenames and documents QA blockers.
