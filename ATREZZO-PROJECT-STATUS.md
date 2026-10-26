@@ -49,3 +49,11 @@ Actualizado: 2026-10-26
 - Acción real disponible: copiar los detalles para comunicarlos al equipo por teléfono. **NO hay envío a un servidor**, ni reserva confirmada; pendiente de integración autorizada.
 - Ajustado hero de páginas internas con `min-height` adaptativo y tamaños fluidos para evitar recorte del H1 mostrado en captura.
 - Aún falta revisión visual del popup en navegador a 375, 768, 1024, 1440 y prueba manual de copiado.
+
+## Home — scroll cinematográfico de servicios (26/10/2026)
+- Integrada secuencia anclada **Plumbing → HVAC → Electrical → Gas** mediante `index.html`, `assets/services-story.css` y `assets/services-story.js`.
+- Un único escenario sticky permanece bajo el header mientras cada servicio aparece por encima del anterior y se mantiene durante el siguiente tramo de scroll.
+- Se conservan fotos, copy y enlaces internos de cada categoría; no se cambian las 66 fichas de servicios ni el popup.
+- Tablet con transiciones adaptadas; móvil <=760px y `prefers-reduced-motion`: escenas normales en vertical, sin pin ni animación forzada.
+- Control de foco: escenas que no están activas quedan no interactivas y ocultas del árbol accesible durante la secuencia.
+- **EN VALIDACIÓN:** código y despliegue verificables; falta comprobar visualmente la interacción con scroll real y tamaños de pantalla.
