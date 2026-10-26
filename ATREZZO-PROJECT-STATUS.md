@@ -72,3 +72,10 @@ Actualizado: 2026-10-26
 - Desktop: wide portrait to the right, dark copy area on the left. At <=1100 px: text and CTAs above a 1.6:1 image; at <=760px: 1.37:1 right-aligned crop retaining all six people.
 - Scoped `assets/family-hero.css` applies to these areas only. Previously approved four-service scroll effect unchanged.
 - Responsive visual browser QA at 375, 768, 1024, and 1440px remains pending until verified.
+
+## Home — elimination of duplicate service directory (2026-10-26)
+- Removed `Skip to What You Need` section because Plumbing/HVAC/Electrical/Gas were already presented directly above in the approved photographic scroll sequence.
+- Home now transitions directly from the Gas scene to the family/About section, improving narrative and avoiding repeated menus.
+- Preserved category links within the four scenes, global navigation, service pages, header booking and Contact. Removed unused desktop/mobile CSS for the deleted directory.
+- Scoped change only to Home markup and associated obsolete CSS. No changes to pinned scroll animation, hero or internal pages.
+- Code structural validation completed; browser visual transition pending verification.
