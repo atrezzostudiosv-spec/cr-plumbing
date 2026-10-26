@@ -22,19 +22,37 @@
     const travel = Math.max(1, rect.height - stage.getBoundingClientRect().height);
     const progress = clamp((pinTop - rect.top) / travel);
     const total = scenes.length;
+    // Each scene arrives gradually over a longer scroll distance. The gaps
+    // between entrances let visitors actually look at each photograph.
+    const transitionDuration = .16;
+    const entranceStarts = Array.from({length: total}, (_, i) =>
+      i === 0 ? 0 : .17 + (i - 1) * .25
+    );
     let foreground = 0;
 
     scenes.forEach((scene, i) => {
-      const entrance = i === 0 ? 1 : ease(clamp((progress - (i / total - .05)) / .085));
-      const translate = i === 0 ? 0 : (1 - entrance)*100;
+      const start = entranceStarts[i];
+      const entrance = i === 0 ? 1 : ease(clamp((progress - start) / transitionDuration));
+      const translate = i === 0 ? 0 : (1 - entrance) * 100;
       scene.style.setProperty('--scene-enter', translate.toFixed(3) + '%');
       scene.style.setProperty('--scene-order', String(i + 1));
 
-      const outgoing = i < total - 1 ? ease(clamp((progress - ((i+1)/total - .05)) / .085)) : 0;
-      const zoom = 1.045 + Math.min(.045, (entrance * .02) + (outgoing * .025));
+      const nextStart = entranceStarts[i + 1];
+      const outgoing = i < total - 1
+        ? ease(clamp((progress - nextStart) / transitionDuration))
+        : 0;
+
+      // A measured 6.8% push-in, controlled by scroll throughout the scene's
+      // visible lifespan—not just at the instant the next chapter arrives.
+      const zoomEnd = i < total - 1 ? nextStart + transitionDuration : 1;
+      const zoomStart = i === 0 ? 0 : start;
+      const zoomProgress = ease(clamp(
+        (progress - zoomStart) / Math.max(.001, zoomEnd - zoomStart)
+      ));
+      const zoom = 1.025 + .068 * zoomProgress;
       scene.style.setProperty('--scene-scale', zoom.toFixed(4));
-      scene.style.setProperty('--copy-opacity', String(clamp(1 - outgoing * .55).toFixed(3)));
-      scene.style.setProperty('--copy-y', (outgoing * -18).toFixed(1) + 'px');
+      scene.style.setProperty('--copy-opacity', String(clamp(1 - outgoing * .4).toFixed(3)));
+      scene.style.setProperty('--copy-y', (outgoing * -12).toFixed(1) + 'px');
 
       if (i > 0 && entrance >= .5) foreground = i;
     });
