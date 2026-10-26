@@ -57,3 +57,11 @@ Actualizado: 2026-10-26
 - Tablet con transiciones adaptadas; móvil <=760px y `prefers-reduced-motion`: escenas normales en vertical, sin pin ni animación forzada.
 - Control de foco: escenas que no están activas quedan no interactivas y ocultas del árbol accesible durante la secuencia.
 - **EN VALIDACIÓN:** código y despliegue verificables; falta comprobar visualmente la interacción con scroll real y tamaños de pantalla.
+
+## Refinamiento cinematográfico — 26/10/2026
+- Ajuste aprobado por observación del usuario: la tarjeta siguiente entraba demasiado rápido y el zoom resultaba casi imperceptible.
+- `assets/services-story.js`: duración relativa de la entrada aumentada de 0.085 a 0.16 del recorrido; puntos de entrada escalonados 0.17 / 0.42 / 0.67; curva ease-in-out ligada al scroll, sin temporizadores ni scroll forzado.
+- Zoom progresivo real de escala 1.025 a 1.093 (incremento de 6.8 puntos porcentuales) mientras cada escena se muestra.
+- `assets/services-story.css`: recorrido de escenario anclado ampliado a 540svh en desktop y 510svh en tablet.
+- Móvil <= 760 px y usuarios con movimiento reducido conservan escenas apiladas sin zoom ni pin.
+- **EN VALIDACIÓN VISUAL:** verificación estática de código completada; probar desplazamiento en navegador real y confirmar contraste/recorte de las fotos antes de cerrar.
