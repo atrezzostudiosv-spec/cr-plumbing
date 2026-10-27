@@ -57,3 +57,48 @@ body.cr-heating-installation .cr-questions .cr-qa p{font-size:1.05rem;line-heigh
  body.cr-heating-installation .cr-detail-band .cr-list-rows{margin-top:38px}
  body.cr-heating-installation .cr-docu-media img{aspect-ratio:4/3;max-height:none}
 }
+
+/* Two full-bleed cinematic chapters; source text and FAQ untouched. */
+body.cr-heating-installation .cr-photo-chapter,
+body.cr-heating-installation .cr-photo-process{isolation:isolate;position:relative;overflow:clip;background:#081b29;color:#f5f9fa}
+body.cr-heating-installation .cr-photo-chapter::before,
+body.cr-heating-installation .cr-photo-process::before{
+ content:"";position:absolute;inset:-5%;z-index:-2;
+ background-size:cover;background-position:center;
+ transform:scale(var(--heating-zoom,1.025));transform-origin:center;
+ will-change:transform;
+}
+body.cr-heating-installation .cr-photo-chapter::before{background-image:url('/cr-plumbing/assets/service-media/hvac-heating-new-installation-2.webp')}
+body.cr-heating-installation .cr-photo-process::before{background-image:url('/cr-plumbing/assets/service-media/hvac-heating-new-installation-1.webp')}
+body.cr-heating-installation .cr-photo-chapter::after,
+body.cr-heating-installation .cr-photo-process::after{
+ content:"";position:absolute;inset:0;z-index:-1;
+ background:linear-gradient(90deg,rgba(5,21,31,.97),rgba(5,21,31,.86) 54%,rgba(5,21,31,.51));
+}
+body.cr-heating-installation .cr-photo-chapter .cr-chapter-heading h2,
+body.cr-heating-installation .cr-photo-chapter .cr-list-row h3,
+body.cr-heating-installation .cr-photo-process h2,
+body.cr-heating-installation .cr-photo-process h3{color:#fff}
+body.cr-heating-installation .cr-photo-chapter .cr-chapter-index,
+body.cr-heating-installation .cr-photo-chapter .cr-row-index{color:#9be7ed}
+body.cr-heating-installation .cr-photo-chapter .cr-chapter-intro p,
+body.cr-heating-installation .cr-photo-chapter .cr-list-row p,
+body.cr-heating-installation .cr-photo-process .cr-process-item p{color:#e4eff2!important}
+body.cr-heating-installation .cr-photo-chapter .cr-list-row{border-color:rgba(201,229,235,.38)}
+body.cr-heating-installation .cr-photo-chapter .cr-chapter-index{border-color:rgba(201,229,235,.5)}
+body.cr-heating-installation .cr-photo-process{z-index:2;box-shadow:0 -22px 48px rgba(2,18,29,.22)}
+body.cr-heating-installation .cr-photo-process .cr-process-inner{position:relative}
+@media(min-width:821px){
+ body.cr-heating-installation .cr-photo-process{margin-top:-3rem;border-radius:0}
+}
+@media(max-width:820px){
+ body.cr-heating-installation .cr-photo-chapter::before,
+ body.cr-heating-installation .cr-photo-process::before{inset:0;background-position:60% center}
+ body.cr-heating-installation .cr-photo-chapter::after,
+ body.cr-heating-installation .cr-photo-process::after{background:rgba(5,21,31,.84)}
+ body.cr-heating-installation .cr-photo-process{margin-top:0}
+}
+@media(prefers-reduced-motion:reduce){
+ body.cr-heating-installation .cr-photo-chapter::before,
+ body.cr-heating-installation .cr-photo-process::before{transform:none!important;will-change:auto}
+}
