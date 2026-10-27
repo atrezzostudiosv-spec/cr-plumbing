@@ -185,6 +185,13 @@
         section.setAttribute('aria-label','Illustrative electrical panel inspection photograph for the website proposal');
         section.innerHTML='<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">ELECTRICAL / SERVICE DETAIL</span><h2>A CLOSER<br>LOOK.</h2><p>An illustrative look at the electrical panel area and service equipment. This photograph is concept imagery, not a documented CR Plumbing project.</p></div></div>';
       }
+      // Gas Services proposal: use image 10 as one full-bleed editorial scene.
+      // Not evidence of a CR Plumbing employee, completed job or actual gas leak.
+      if(slug==='/gas-services/'){
+        section.className='cr-service-media cr-gas-connections-inspection cr-x-reveal';
+        section.setAttribute('aria-label','Illustrative inspection of residential gas-line connections for this website proposal');
+        section.innerHTML='<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">GAS LINES / CONNECTIONS</span><h2>A CLOSER<br>LOOK.</h2><p>An illustrative view of gas piping connections and inspection equipment. Concept imagery for this website proposal, not a documented CR Plumbing project.</p></div></div>';
+      }
       const insertAfter=sections.length>=3?sections[1]:sections[0];
       insertAfter.insertAdjacentElement('afterend',section);
       if(motionOff.matches || !('IntersectionObserver' in window)){section.classList.add('is-visible')}
