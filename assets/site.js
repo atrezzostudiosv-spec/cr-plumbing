@@ -34,6 +34,25 @@ if(document.body?.classList.contains('cr-detail') &&
   processPhoto.src='/cr-plumbing/assets/images/cr-shared-how-it-works.webp';
 }
 
+/* Shared Let's Talk full-bleed photography for service pages.
+   Protect non-service pages, image loading failures and original source copy. */
+if(document.body?.classList.contains('cr-detail') &&
+   !document.body.classList.contains('cr-company') &&
+   document.querySelector('.cr-page .cr-end') &&
+   !document.querySelector('link[data-cr-shared-cta-photo]')){
+  const ctaPhoto=new Image();
+  ctaPhoto.decoding='async';
+  ctaPhoto.onload=()=>{
+    if(document.querySelector('link[data-cr-shared-cta-photo]'))return;
+    const layer=document.createElement('link');
+    layer.rel='stylesheet';
+    layer.href='/cr-plumbing/assets/shared-cta-photo.css?v=20261027-01';
+    layer.dataset.crSharedCtaPhoto='true';
+    document.head.appendChild(layer);
+  };
+  ctaPhoto.src='/cr-plumbing/assets/images/cr-shared-lets-talk.webp';
+}
+
 /* Atrezzo shared navigation upgrade.
    Existing static navigation stays as a functional fallback if an asset fails. */
 if(document.querySelector('.site-head')&&!document.querySelector('script[data-cr-nav-data]')){
