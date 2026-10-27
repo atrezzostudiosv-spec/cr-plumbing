@@ -1,0 +1,112 @@
+/* CR Plumbing / Gas Services — cinematic hero for proposal.
+   Photo is illustrative and does not document a CR employee, gas leak or repair.
+   Scoped to /gas-services/ only; no Home or other service styles affected. */
+body.cr-detail .cr-page-hero.cr-gas-services-hero {
+  position:relative;
+  background-color:#0c212b;
+}
+body.cr-detail .cr-page-hero.cr-gas-services-hero::before {
+  background-image:url('/cr-plumbing/assets/images/cr-gas-services-hero.webp');
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+body.cr-detail .cr-page-hero.cr-gas-services-hero::after {
+  background:
+    linear-gradient(90deg,
+      rgba(6,22,34,.97) 0%,
+      rgba(6,22,34,.92) 28%,
+      rgba(6,22,34,.76) 45%,
+      rgba(6,22,34,.33) 74%,
+      rgba(6,22,34,.07) 100%),
+    linear-gradient(0deg,rgba(6,22,34,.55),transparent 62%);
+}
+body.cr-detail .cr-page-hero.cr-gas-services-hero .cr-hero-inner {
+  position:relative;
+  z-index:1;
+}
+body.cr-detail .cr-page-hero.cr-gas-services-hero h1 {
+  max-width:830px;
+  font-size:clamp(4rem,7vw,8.25rem);
+  line-height:.88;
+}
+body.cr-detail .cr-page-hero.cr-gas-services-hero .cr-hero-lead {
+  max-width:610px;
+  color:#e8f0f4;
+}
+@media(max-width:1024px) and (min-width:821px) {
+  body.cr-detail .cr-page-hero.cr-gas-services-hero::before {
+    background-position:61% center;
+  }
+  body.cr-detail .cr-page-hero.cr-gas-services-hero::after {
+    background:
+      linear-gradient(90deg,rgba(6,22,34,.97),rgba(6,22,34,.85) 45%,rgba(6,22,34,.40) 100%),
+      linear-gradient(0deg,rgba(6,22,34,.50),transparent 65%);
+  }
+}
+@media(max-width:820px) {
+  body.cr-detail .cr-page-hero.cr-gas-services-hero {
+    min-height:0;
+    align-items:flex-start;
+    padding-top:clamp(350px,52vw,470px);
+    padding-bottom:clamp(86px,11vw,120px);
+  }
+  body.cr-detail .cr-page-hero.cr-gas-services-hero::before {
+    inset:0 0 auto;
+    height:clamp(390px,57vw,510px);
+    background-position:70% center;
+    transform:none;
+    will-change:auto;
+  }
+  body.cr-detail .cr-page-hero.cr-gas-services-hero::after {
+    background:linear-gradient(180deg,
+      rgba(12,33,43,.04) 0px,
+      rgba(12,33,43,.10) 190px,
+      rgba(12,33,43,.56) 325px,
+      #0c212b 445px,
+      #0c212b 100%);
+  }
+  body.cr-detail .cr-page-hero.cr-gas-services-hero .cr-hero-inner {
+    display:block;
+    width:100%;
+  }
+  body.cr-detail .cr-page-hero.cr-gas-services-hero .cr-hero-aside {display:none}
+  body.cr-detail .cr-page-hero.cr-gas-services-hero h1 {
+    font-size:clamp(3.8rem,10vw,6.2rem);
+    max-width:100%;
+  }
+}
+@media(max-width:550px) {
+  body.cr-detail .cr-page-hero.cr-gas-services-hero {
+    padding-top:clamp(345px,94vw,410px);
+    padding-bottom:75px;
+  }
+  body.cr-detail .cr-page-hero.cr-gas-services-hero::before {
+    height:clamp(370px,102vw,460px);
+    background-position:70% center;
+  }
+  body.cr-detail .cr-page-hero.cr-gas-services-hero::after {
+    background:linear-gradient(180deg,
+      rgba(12,33,43,.04) 0px,
+      rgba(12,33,43,.10) 165px,
+      rgba(12,33,43,.53) 295px,
+      #0c212b 405px,
+      #0c212b 100%);
+  }
+  body.cr-detail .cr-page-hero.cr-gas-services-hero h1 {
+    font-size:clamp(3.5rem,12.7vw,5.1rem);
+    line-height:.91;
+  }
+  body.cr-detail .cr-page-hero.cr-gas-services-hero .cr-hero-lead {
+    max-width:100%;
+    font-size:.97rem;
+    line-height:1.74;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body.cr-detail .cr-page-hero.cr-gas-services-hero::before {
+    transform:none!important;
+    will-change:auto!important;
+    transition:none!important;
+  }
+}
