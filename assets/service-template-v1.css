@@ -79,7 +79,7 @@ body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-wrap{
 }
 body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2{
   max-width:930px;
-  font-size:clamp(3.2rem,5.5vw,6rem);
+  font-size:clamp(2.65rem,5.2vw,5.5rem);
   line-height:.99;
   letter-spacing:-.02em;
   overflow-wrap:break-word;
@@ -181,7 +181,7 @@ body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media .cr-docu-media-
 }
 body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media img{display:none}
 body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media h2{
-  font-size:clamp(3.35rem,6.2vw,7.3rem);
+  font-size:clamp(3rem,5.6vw,6.4rem);
   line-height:.91;
   max-width:790px;
   color:#fff;
@@ -310,7 +310,7 @@ body.cr-detail.cr-template-v1 summary:focus-visible{
     background:#ecf5f7;
   }
   body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2{
-    font-size:clamp(3.1rem,6.6vw,5.2rem);
+    font-size:clamp(2.7rem,6.2vw,4.6rem);
   }
 }
 @media(max-width:820px){
@@ -320,7 +320,7 @@ body.cr-detail.cr-template-v1 summary:focus-visible{
     padding-block:clamp(77px,10vw,104px);
   }
   body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2{
-    font-size:clamp(3.1rem,9.3vw,4.8rem);
+    font-size:clamp(2.5rem,8.4vw,4.2rem);
   }
   body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-wrap,
   body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-intro{
@@ -342,7 +342,7 @@ body.cr-detail.cr-template-v1 summary:focus-visible{
   }
   body.cr-detail.cr-template-v1 .cr-reading-mobile-label{font-size:.7rem;letter-spacing:.025em}
   body.cr-detail.cr-template-v1 .cr-reading-current{font-size:.72rem}
-  body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2{font-size:clamp(2.9rem,11vw,4.45rem)}
+  body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2{font-size:clamp(2.25rem,9.2vw,3.45rem)}
   body.cr-detail.cr-template-v1 .cr-detail-band .cr-list-row p,
   body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-intro p{
     font-size:1rem;
@@ -352,9 +352,23 @@ body.cr-detail.cr-template-v1 summary:focus-visible{
     padding:85px var(--edge);
   }
   body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media h2{
-    font-size:clamp(3.15rem,11.6vw,5.15rem);
+    font-size:clamp(2.55rem,9.7vw,4.3rem);
   }
 }
 @media(prefers-reduced-motion:reduce){
   body.cr-detail.cr-template-v1 .cr-reading-mobile summary svg{transition:none}
+}
+
+/* Phase 3: prevent narrow layouts from clipping editorial content. */
+body.cr-detail.cr-template-v1 .cr-reading-links,
+body.cr-detail.cr-template-v1 .cr-reading-track,
+body.cr-detail.cr-template-v1 .cr-questions,
+body.cr-detail.cr-template-v1 .cr-related,
+body.cr-detail.cr-template-v1 .cr-process {min-width:0;max-width:100%;}
+body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2,
+body.cr-detail.cr-template-v1 .cr-docu-media h2 {overflow-wrap:anywhere;}
+@media(max-width:550px){
+ body.cr-detail.cr-template-v1 .cr-reading-current{max-width:42%;}
+ body.cr-detail.cr-template-v1 .cr-detail-band .cr-list-row h3{font-size:clamp(1.5rem,6.2vw,2rem);}
+ body.cr-detail.cr-template-v1 .cr-page-hero h1{overflow-wrap:anywhere;}
 }
