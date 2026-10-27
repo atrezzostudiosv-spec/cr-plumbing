@@ -1,0 +1,88 @@
+/* CR Plumbing — Water Heaters service hero.
+   Cinematic illustrative proposal artwork. Not a documented customer installation.
+   Scoped strictly to /plumbing-services/water-heaters/. */
+.cr-detail .cr-page-hero.cr-water-heaters-hero {
+  background-color:#081e2c;
+}
+.cr-detail .cr-page-hero.cr-water-heaters-hero::before {
+  background-image:url('/cr-plumbing/assets/images/cr-water-heaters-hero.webp');
+  background-size:cover;
+  background-position: center center;
+  background-repeat:no-repeat;
+}
+.cr-detail .cr-page-hero.cr-water-heaters-hero::after {
+  background:
+    linear-gradient(90deg,
+      rgba(6,22,33,.94) 0%,
+      rgba(6,22,33,.88) 27%,
+      rgba(6,22,33,.67) 47%,
+      rgba(6,22,33,.25) 72%,
+      rgba(6,22,33,.06) 100%),
+    linear-gradient(0deg,rgba(6,22,33,.55),transparent 62%);
+}
+.cr-detail .cr-page-hero.cr-water-heaters-hero .cr-hero-inner {
+  position:relative;
+  z-index:1;
+}
+.cr-detail .cr-page-hero.cr-water-heaters-hero .cr-hero-lead {
+  color:#e7f2f5;
+  max-width:650px;
+}
+@media(max-width:820px){
+  .cr-detail .cr-page-hero.cr-water-heaters-hero {
+    min-height:0;
+    align-items:flex-start;
+    padding-top:clamp(365px,51vw,470px);
+    padding-bottom:clamp(84px,12vw,110px);
+  }
+  .cr-detail .cr-page-hero.cr-water-heaters-hero::before {
+    top:0;
+    bottom:auto;
+    height:clamp(395px,57vw,500px);
+    background-size:cover;
+    background-position:70% center;
+    transform:none;
+    will-change:auto;
+  }
+  .cr-detail .cr-page-hero.cr-water-heaters-hero::after {
+    background:linear-gradient(to bottom,
+      rgba(8,30,44,.06) 0px,
+      rgba(8,30,44,.08) 170px,
+      rgba(8,30,44,.48) 300px,
+      #081e2c 435px,
+      #081e2c 100%);
+  }
+  .cr-detail .cr-page-hero.cr-water-heaters-hero .cr-hero-inner {
+    width:100%;
+    display:block;
+  }
+  .cr-detail .cr-page-hero.cr-water-heaters-hero .cr-hero-aside {
+    display:none;
+  }
+}
+@media(max-width:550px){
+  .cr-detail .cr-page-hero.cr-water-heaters-hero {
+    padding-top:clamp(355px,100vw,405px);
+    padding-bottom:74px;
+  }
+  .cr-detail .cr-page-hero.cr-water-heaters-hero::before {
+    height:clamp(375px,104vw,440px);
+    background-position:71% center;
+  }
+  .cr-detail .cr-page-hero.cr-water-heaters-hero h1 {
+    font-size:clamp(3.4rem,13.5vw,5.4rem);
+    line-height:.90;
+  }
+  .cr-detail .cr-page-hero.cr-water-heaters-hero .cr-hero-lead {
+    max-width:100%;
+    font-size:1rem;
+    line-height:1.72;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .cr-detail .cr-page-hero.cr-water-heaters-hero::before {
+    transform:none!important;
+    transition:none!important;
+    will-change:auto!important;
+  }
+}
