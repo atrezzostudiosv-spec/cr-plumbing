@@ -84,7 +84,7 @@ for (const [pageName, path] of Object.entries(paths)) {
       await process.scrollIntoViewIfNeeded();
       await page.screenshot({path:stem+'-process.jpg',type:'jpeg',quality:54});
       const media=page.locator('.cr-docu-media img').first();
-      if(await media.count()) {await media.scrollIntoViewIfNeeded();
+      if(await media.count() && await media.isVisible()) {await media.scrollIntoViewIfNeeded();
       await page.waitForTimeout(400);
       console.log('MEDIA '+JSON.stringify({page:pageName,width,...(await media.evaluate(el=>({loaded:el.complete && el.naturalWidth>0,
        naturalWidth:el.naturalWidth,src:el.currentSrc})))}));}
