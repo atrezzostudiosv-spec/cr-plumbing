@@ -115,6 +115,32 @@ body.cr-detail.cr-template-v1 .cr-detail-band .cr-list-row a{
   text-underline-offset:.2em;
 }
 
+/* A source chapter marked --navy can receive a white editorial surface from
+   interior-experience.css. Override its inherited pale navy-copy colors there.
+   This specifically fixes light-grey nearly invisible text on white. */
+body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter{
+  background:#fff;
+  color:#153242;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter .cr-chapter-heading h2,
+body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter .cr-list-row h3{
+  color:#163647;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter .cr-chapter-intro p,
+body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter .cr-list-row p{
+  color:#2b4351!important;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter .cr-chapter-index,
+body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter .cr-row-index{
+  color:#0b6785;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter .cr-list-row{
+  border-color:#bccfd8;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter .cr-chapter-index{
+  border-color:#a7bfca;
+}
+
 /* Electrical and Gas source pages contained unrelated side photographs.
    Use a typographic editorial interlude until a correct photo is supplied. */
 body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media{
