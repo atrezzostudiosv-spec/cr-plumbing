@@ -57,7 +57,7 @@ body.cr-pilot-dryer .cr-docu-media p{
 }
 /* 2 / A closer look — full scene instead of archival images in circular frames. */
 body.cr-pilot-dryer .cr-service-media{
-  background-image:url('/cr-plumbing/assets/images/pilot-dryer-closer.webp');
+  background-image:url('/cr-plumbing/assets/images/cr-dryer-vent-exterior-bg.webp');
   background-position:center,right center;
   min-height:clamp(590px,78svh,820px);
   display:flex;
@@ -180,4 +180,66 @@ body.cr-pilot-dryer .cr-end .btn{position:relative;z-index:3}
   body.cr-pilot-dryer .cr-service-media,
   body.cr-pilot-dryer .cr-process,
   body.cr-pilot-dryer .cr-end{background-attachment:scroll!important}
+}
+/* CR Plumbing — photo 06, exterior dryer vent inspection.
+   Illustrative proposal image; not an actual project photograph.
+   Keep source-backed copy and adjacent service sections untouched. */
+body.cr-pilot-dryer .cr-service-media:before {
+  background:linear-gradient(90deg,
+    rgba(5,21,31,.98) 0%,
+    rgba(5,21,31,.93) 29%,
+    rgba(5,21,31,.73) 48%,
+    rgba(5,21,31,.30) 72%,
+    rgba(5,21,31,.08) 100%);
+}
+@media(max-width:1024px) and (min-width:761px){
+  body.cr-pilot-dryer .cr-service-media {
+    background-position:66% center;
+  }
+}
+@media(max-width:760px){
+  body.cr-pilot-dryer .cr-service-media {
+    display:block;
+    min-height:0;
+    background:#0a2433;
+    padding:clamp(335px,91vw,445px) var(--edge) 84px;
+  }
+  body.cr-pilot-dryer .cr-service-media:before {
+    content:"";
+    position:absolute;
+    inset:0 0 auto;
+    height:clamp(365px,101vw,480px);
+    background-image:
+      linear-gradient(0deg,
+        #0a2433 0%,
+        rgba(10,36,51,.35) 32%,
+        rgba(10,36,51,.07) 75%,
+        rgba(10,36,51,.02) 100%),
+      url('/cr-plumbing/assets/images/cr-dryer-vent-exterior-bg.webp');
+    background-position:center,72% center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    z-index:0;
+    pointer-events:none;
+  }
+  body.cr-pilot-dryer .cr-service-media .cr-media-layout{
+    position:relative;
+    z-index:1;
+  }
+  body.cr-pilot-dryer .cr-service-media .cr-media-intro,
+  body.cr-pilot-dryer .cr-service-media .cr-media-intro p {
+    width:100%;
+    max-width:100%;
+  }
+  body.cr-pilot-dryer .cr-service-media .cr-media-intro h2 {
+    font-size:clamp(3.5rem,12.2vw,5.7rem);
+    max-width:100%;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body.cr-pilot-dryer .cr-service-media,
+  body.cr-pilot-dryer .cr-service-media:before{
+    transition:none!important;
+    animation:none!important;
+  }
 }
