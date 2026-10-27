@@ -170,6 +170,13 @@
         section.setAttribute('aria-label','Illustrative water heater inspection scene, not an actual CR Plumbing project');
         section.innerHTML='<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">INSPECTION / WATER HEATERS</span><h2>A CLOSER<br>LOOK.</h2><p>A closer look at the equipment and fittings involved in residential water heater inspection. Illustrative imagery for this website proposal.</p></div></div>';
       }
+      // Dryer Vent pilot: exterior vent scene supplied for this concept design.
+      // Do not label generated proposal imagery as actual CR Plumbing work.
+      if(slug==='/hvac/dryer-vent-duct/'){
+        section.className='cr-service-media cr-dryer-vent-exterior cr-x-reveal';
+        section.setAttribute('aria-label','Illustrative exterior dryer vent inspection scene, not an actual CR Plumbing job');
+        section.innerHTML='<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">EXTERIOR VENT / DRYER DUCT</span><h2>A CLOSER<br>LOOK.</h2><p>Checking the exterior vent outlet for lint buildup or restrictions. Illustrative imagery for this website proposal, not a documented CR Plumbing project.</p></div></div>';
+      }
       const insertAfter=sections.length>=3?sections[1]:sections[0];
       insertAfter.insertAdjacentElement('afterend',section);
       if(motionOff.matches || !('IntersectionObserver' in window)){section.classList.add('is-visible')}
