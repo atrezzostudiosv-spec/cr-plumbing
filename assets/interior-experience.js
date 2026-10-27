@@ -121,19 +121,45 @@
     section.querySelectorAll('.cr-list-row p').forEach(p=>{if(!p.getAttribute('lang'))p.setAttribute('lang','en')});
   });
 
-  // A lightweight chapter index avoids forcing visitors to scroll blindly
-  // through informationally dense pages. No new page or commercial claim.
-  const index=document.createElement('nav');index.className='cr-reading-index';index.setAttribute('aria-label','On this service page');
+  // Source-backed chapter navigation. Phase 3 pilot gets a native details menu
+  // at tablet/mobile breakpoints; unapproved service pages keep the old fallback.
+  const index=document.createElement('nav');
+  index.className='cr-reading-index';
+  index.setAttribute('aria-label','On this service page');
+  const pilotGuide=body.classList.contains('cr-template-v1');
   const links=sections.map((s,i)=>({id:s.id,title:s.querySelector('h2')?.textContent.trim().replace(/\s+/g,' ')||'Details',num:String(i+1).padStart(2,'0')}));
   if(main.querySelector('.cr-process')){
-    const el=main.querySelector('.cr-process');el.id='cr-service-process';links.push({id:el.id,title:'Process',num:String(links.length+1).padStart(2,'0')});
+    const el=main.querySelector('.cr-process');
+    el.id='cr-service-process';
+    links.push({id:el.id,title:'Process',num:String(links.length+1).padStart(2,'0')});
   }
   if(main.querySelector('.cr-questions')){
-    main.querySelector('.cr-questions').id='cr-service-faq';links.push({id:'cr-service-faq',title:'Questions',num:String(links.length+1).padStart(2,'0')});
+    main.querySelector('.cr-questions').id='cr-service-faq';
+    links.push({id:'cr-service-faq',title:'Questions',num:String(links.length+1).padStart(2,'0')});
   }
-  index.innerHTML=`<div class="cr-reading-track"><span class="cr-reading-label">Service guide</span><div class="cr-reading-links">${links.map(x=>`<a href="#${x.id}"><span>${x.num}</span>${x.title}</a>`).join('')}</div></div>`;
+  const guideItems=links.map(x=>`<a href="#${escAttr(x.id)}"><span>${x.num}</span>${escAttr(x.title)}</a>`).join('');
+  const mobileGuide=pilotGuide?
+    `<details class="cr-reading-mobile"><summary><span class="cr-reading-mobile-label">Explore This Page</span><span class="cr-reading-current" aria-live="polite">Jump to a section</span><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary><div class="cr-reading-mobile-links">${guideItems}</div></details>`:''; 
+  index.innerHTML=`<div class="cr-reading-track"><span class="cr-reading-label">Service guide</span><div class="cr-reading-links">${guideItems}</div>${mobileGuide}</div>`;
   hero.insertAdjacentElement('afterend',index);
   const navlinks=[...index.querySelectorAll('a')];
+  const details=index.querySelector('.cr-reading-mobile');
+  const currentText=details?.querySelector('.cr-reading-current');
+  if(details){
+    details.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+      if(currentText)currentText.textContent=link.textContent.trim().replace(/^\d+\s*/, '');
+      details.open=false;
+    }));
+    details.addEventListener('keydown',event=>{
+      if(event.key==='Escape'){
+        details.open=false;
+        details.querySelector('summary')?.focus();
+      }
+    });
+    document.addEventListener('pointerdown',event=>{
+      if(details.open&&!details.contains(event.target))details.open=false;
+    },{passive:true});
+  }
   if('IntersectionObserver' in window){
     const activeObserver=new IntersectionObserver(entries=>{
       const target=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
@@ -142,6 +168,8 @@
         if(link.hash==='#'+target.target.id)link.setAttribute('aria-current','location');
         else link.removeAttribute('aria-current');
       });
+      const selected=links.find(x=>x.id===target.target.id);
+      if(currentText&&selected)currentText.textContent=selected.title;
     },{rootMargin:'-25% 0px -60% 0px',threshold:0});
     [...sections,main.querySelector('#cr-service-process'),main.querySelector('#cr-service-faq')].filter(Boolean).forEach(el=>activeObserver.observe(el));
   }
