@@ -48,3 +48,23 @@ This is a **proposal**, not an official CR Plumbing production site. All images 
 ## Decision gate before applying to 62 remaining service pages
 
 Inspect the four pilots at **375 / 768 / 1024 / 1440 px** in a browser, verify page navigation and CTA interactions, confirm image crop and readable contrasts, and approve or correct any remaining defects. Apply this shared template systematically only after that visual QA. Other service images and local-area pages belong to later phases.
+
+## Phase 3 — QA round 2 / 2026-10-27
+
+### Fixes and verifications implemented
+- Condensed the navigation labels for the four approved pilots to avoid overflowing and tall sticky multi-row desktop guides. Source H2 and all service paragraphs remain unchanged.
+- Prevented `assets/service-design-manifest.json` from overriding the pilot-specific hero images with older category pictures.
+- Refreshed the shared `site.js` and chapter-guide JS query versions on all four pilots.
+- Scanned HTML internal `href`, `src` and hash references in the four pages against the actual repository tree: **0 invalid local file paths, 0 invalid static hash targets**.
+- Verified referenced image paths in eight related CSS files: **0 missing local photo files**.
+- Checked brace balance in eight CSS sources and parsed both shared scripts: **no syntax failures**.
+- Verified a single H1 on each page and **31 of 31 pilot FAQs** (8 Water Heaters, 6 Dryer Vent, 9 Electrical, 8 Gas).
+
+### Limits and next gate
+The published website could not be rendered or controlled in a live browser through the tools available for this chat. This is a **repository and static-code QA**, not actual viewport testing. The user-approved visual gate remains pending at **375, 768, 1024, and 1440 px** on all four pages. In particular check:
+- Navigation/menu open, Escape, close outside, selected section and scroll-to-position.
+- Photo crop and subject visibility in mobile and tablet.
+- Text wrapping, contrast, overflow and button visibility, including desktop navigation.
+- Actual live asset/network requests and performance.
+
+Status: **IMPLEMENTED AND STATIC-CODE-CHECKED, NOT VISUALLY SIGNED OFF**. Do not spread the `cr-template-v1` flag across all 66 routes until this gate is completed. Keep the proposal marked not production-ready and keep the claim validation register as pending.
