@@ -1,0 +1,18 @@
+name: Atrezzo Static QA
+on:
+  push:
+    branches:
+      - audit/**
+  pull_request:
+    branches:
+      - main
+jobs:
+  source-qa:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Run non-destructive static audit
+        run: python3 scripts/atrezzo_static_qa.py --fail-critical
