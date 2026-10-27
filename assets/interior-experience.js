@@ -177,6 +177,14 @@
         section.setAttribute('aria-label','Illustrative exterior dryer vent inspection scene, not an actual CR Plumbing job');
         section.innerHTML='<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">EXTERIOR VENT / DRYER DUCT</span><h2>A CLOSER<br>LOOK.</h2><p>Checking the exterior vent outlet for lint buildup or restrictions. Illustrative imagery for this website proposal, not a documented CR Plumbing project.</p></div></div>';
       }
+      // Electrical Services concept: the user-approved illustration replaces
+      // the two low-resolution archive images in this single editorial chapter.
+      // It does not depict a verified CR Plumbing employee or completed job.
+      if(slug==='/electrical-services/'){
+        section.className='cr-service-media cr-electrical-diagnostics cr-x-reveal';
+        section.setAttribute('aria-label','Illustrative electrical panel inspection photograph for the website proposal');
+        section.innerHTML='<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">ELECTRICAL / SERVICE DETAIL</span><h2>A CLOSER<br>LOOK.</h2><p>An illustrative look at the electrical panel area and service equipment. This photograph is concept imagery, not a documented CR Plumbing project.</p></div></div>';
+      }
       const insertAfter=sections.length>=3?sections[1]:sections[0];
       insertAfter.insertAdjacentElement('afterend',section);
       if(motionOff.matches || !('IntersectionObserver' in window)){section.classList.add('is-visible')}
