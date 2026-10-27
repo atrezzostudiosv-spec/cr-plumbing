@@ -1,0 +1,26 @@
+/* CR Plumbing — heating installation page-specific refinement.
+   Photographs are illustrative; neither the furnace nor the room is a documented CR customer project. */
+body.cr-heating-installation .cr-page-hero{min-height:clamp(640px,80svh,840px)}
+body.cr-heating-installation .cr-page-hero:before{background-position:67% center;filter:saturate(.86);transform:scale(1.01)}
+body.cr-heating-installation .cr-page-hero:after{background:linear-gradient(90deg,rgba(5,23,35,.98) 0%,rgba(5,23,35,.9) 35%,rgba(5,23,35,.48) 70%,rgba(5,23,35,.18) 100%),linear-gradient(0deg,rgba(5,23,35,.5),transparent 48%)}
+body.cr-heating-installation .cr-page-hero h1{max-width:780px;font-size:clamp(3.5rem,6.65vw,7rem);line-height:.94}
+body.cr-heating-installation .cr-page-hero .cr-hero-lead{max-width:620px;line-height:1.75}
+body.cr-heating-installation .cr-detail-band .cr-chapter-heading h2{max-width:850px;font-size:clamp(2.75rem,5vw,5.25rem);line-height:1.02}
+body.cr-heating-installation .cr-detail-band .cr-chapter-intro p{max-width:73ch;font-size:clamp(1.05rem,1.18vw,1.16rem);line-height:1.9}
+body.cr-heating-installation .cr-detail-band .cr-list-row p{max-width:76ch;font-size:clamp(1.02rem,1.1vw,1.1rem);line-height:1.88}
+body.cr-heating-installation .cr-docu-media{background:#0b2431}
+body.cr-heating-installation .cr-docu-media .cr-docu-media-inner{gap:clamp(24px,4.6vw,75px);align-items:center}
+body.cr-heating-installation .cr-docu-media img{width:100%;height:clamp(320px,40vw,570px);object-fit:cover;object-position:center}
+body.cr-heating-installation .cr-docu-media h2{font-size:clamp(2.7rem,5vw,5.6rem);line-height:.99}
+@media(max-width:820px){
+ body.cr-heating-installation .cr-page-hero h1{font-size:clamp(3.2rem,8vw,5.6rem)}
+ body.cr-heating-installation .cr-detail-band .cr-chapter-heading h2{font-size:clamp(2.5rem,7.8vw,4.3rem)}
+ body.cr-heating-installation .cr-docu-media img{height:360px}
+}
+@media(max-width:550px){
+ body.cr-heating-installation .cr-page-hero h1{font-size:clamp(2.85rem,10.7vw,4.15rem)}
+ body.cr-heating-installation .cr-page-hero:before{background-position:67% center}
+ body.cr-heating-installation .cr-detail-band .cr-chapter-heading h2{font-size:clamp(2.35rem,9vw,3.3rem)}
+ body.cr-heating-installation .cr-docu-media img{height:260px}
+}
+@media(prefers-reduced-motion:reduce){body.cr-heating-installation .cr-page-hero:before{transform:none}}
