@@ -1,0 +1,30 @@
+/* ATREZZO — verified service directory, designed for discoverability. */
+.cr-catalog-hero{background:#0a2534;color:#fff;padding:clamp(95px,10vw,150px) var(--edge) clamp(68px,7vw,100px);position:relative;overflow:hidden}
+.cr-catalog-hero:after{content:"66";position:absolute;right:3vw;bottom:-4vw;font:800 33vw/.8 "Barlow Condensed",Impact,sans-serif;letter-spacing:-.06em;color:#ffffff0a;pointer-events:none}
+.cr-catalog-wrap{max-width:1440px;margin:auto;position:relative;z-index:1}
+.cr-catalog-hero .cr-catalog-kicker{font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#79dfe9}
+.cr-catalog-hero h1{font:700 clamp(4.7rem,10vw,11rem)/.86 "Barlow Condensed",Impact,sans-serif;margin:25px 0 32px;text-transform:uppercase;max-width:850px}
+.cr-catalog-hero p{max-width:680px;color:#e4f0f4;font-size:clamp(1rem,1.45vw,1.25rem);line-height:1.85}
+.cr-catalog-controls{background:#f1f6f7;position:relative;padding:28px var(--edge);border-bottom:1px solid #d4e2e6}
+.cr-catalog-controls .cr-catalog-wrap{display:grid;grid-template-columns:minmax(225px,.9fr) 1.4fr;gap:26px;align-items:center}
+.cr-catalog-search{width:100%;min-height:56px;background:#fff;border:1px solid #b3c9d1;padding:13px 20px;border-radius:0;color:#102b3a;font:700 1rem/1.5 Manrope,Arial,sans-serif}
+.cr-catalog-search:focus{outline:3px solid #0784a5;outline-offset:3px}
+.cr-catalog-quick{display:flex;flex-wrap:wrap;gap:10px}
+.cr-catalog-quick a{font-size:.77rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:11px 16px;border:1px solid #b7cbd2;background:white}
+.cr-catalog-quick a:hover{background:#0b3446;color:white}
+.cr-catalog-list{padding:clamp(75px,9vw,135px) var(--edge);background:#fff}
+.cr-catalog-area{scroll-margin-top:calc(var(--head) + 28px);margin:0 0 clamp(75px,9vw,135px)}
+.cr-catalog-area:last-child{margin-bottom:0}
+.cr-catalog-areahead{display:flex;justify-content:space-between;gap:24px;align-items:end;border-bottom:1px solid #aec8d2;padding:0 0 24px;margin-bottom:34px}
+.cr-catalog-areahead h2{font:700 clamp(3.8rem,6.4vw,7.3rem)/.9 "Barlow Condensed",Impact,sans-serif;margin:0;text-transform:uppercase}
+.cr-catalog-areahead>a{font-weight:800;font-size:.76rem;color:#05698f;text-transform:uppercase;text-align:right}
+.cr-catalog-subgroups{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(28px,4vw,68px)}
+.cr-catalog-sub{min-width:0}
+.cr-catalog-sub h3{font:700 clamp(2rem,2.8vw,3rem)/1.02 "Barlow Condensed",Impact,sans-serif;margin:0 0 14px;text-transform:uppercase;border-bottom:2px solid #0c93a8;padding:0 0 14px}
+.cr-catalog-sub>a{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid #d8e4e8;font-size:.88rem;font-weight:650;line-height:1.55;color:#223b48}
+.cr-catalog-sub>a:hover{color:#056f96}
+.cr-catalog-sub>a:after{content:"↗";font-size:1.1rem;color:#0b8da7;flex:none}
+.cr-catalog-message{color:#254d5a;font-weight:750;padding-top:16px}
+.cr-catalog-sub a[hidden],.cr-catalog-sub[hidden],.cr-catalog-area[hidden]{display:none!important}
+@media(max-width:1000px){.cr-catalog-subgroups{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.cr-catalog-controls .cr-catalog-wrap{grid-template-columns:1fr}.cr-catalog-subgroups{grid-template-columns:1fr;gap:28px}.cr-catalog-hero h1{font-size:clamp(4.5rem,16vw,7rem)}.cr-catalog-areahead{align-items:start;flex-direction:column}.cr-catalog-controls{padding-block:22px}}
