@@ -110,3 +110,108 @@ body.cr-detail .cr-page-hero.cr-gas-services-hero .cr-hero-lead {
     transition:none!important;
   }
 }
+
+
+/* Photo 10 / Gas Services: illustrative gas-line connection inspection scene.
+   Not a verified CR Plumbing customer project, employee or service event.
+   Specific to Gas Services root page; original source copy and FAQ remain untouched. */
+body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  min-height:clamp(640px,82svh,850px);
+  padding:clamp(100px,10vw,155px) var(--edge);
+  background-color:#0b222e;
+  background-image:
+    linear-gradient(90deg,rgba(5,21,32,.97) 0%,rgba(5,21,32,.94) 27%,rgba(5,21,32,.77) 44%,rgba(5,21,32,.38) 68%,rgba(5,21,32,.1) 100%),
+    linear-gradient(0deg,rgba(5,21,32,.34),transparent 62%),
+    url('/cr-plumbing/assets/images/cr-gas-connections-inspection-bg.webp');
+  background-size:cover;
+  background-position:center,center,center center;
+  background-repeat:no-repeat;
+  color:#fff;
+}
+body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection::before{display:none}
+body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection .cr-media-layout{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  max-width:1450px;
+  margin-inline:auto;
+}
+body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection .cr-media-intro{
+  padding:0;
+  width:min(100%,600px);
+  max-width:600px;
+}
+body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection .cr-media-index{
+  color:#eed2af;
+  letter-spacing:.17em;
+}
+body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection .cr-media-intro h2{
+  max-width:550px;
+  margin:20px 0 25px;
+  font-size:clamp(4rem,7vw,7.4rem);
+  line-height:.90;
+  color:#fff;
+  text-wrap:balance;
+}
+body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection .cr-media-intro p{
+  max-width:52ch;
+  margin:0;
+  font-size:clamp(1rem,1.17vw,1.16rem);
+  line-height:1.8;
+  color:#e6edf1;
+}
+@media(max-width:1024px) and (min-width:761px){
+  body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection{
+    background-image:
+      linear-gradient(90deg,rgba(5,21,32,.97),rgba(5,21,32,.88) 45%,rgba(5,21,32,.43) 100%),
+      url('/cr-plumbing/assets/images/cr-gas-connections-inspection-bg.webp');
+    background-position:center,67% center;
+  }
+}
+@media(max-width:760px){
+  body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection{
+    display:block;
+    min-height:0;
+    background:#0b222e;
+    padding:clamp(335px,91vw,430px) var(--edge) 85px;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection::before{
+    content:'';
+    display:block;
+    position:absolute;
+    inset:0 0 auto;
+    height:clamp(375px,102vw,480px);
+    z-index:0;
+    pointer-events:none;
+    background-image:
+      linear-gradient(0deg,#0b222e 0%,rgba(11,34,46,.19) 50%,rgba(11,34,46,.04) 100%),
+      url('/cr-plumbing/assets/images/cr-gas-connections-inspection-bg.webp');
+    background-size:cover;
+    background-position:center,73% center;
+    background-repeat:no-repeat;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection .cr-media-intro{
+    max-width:100%;
+    width:100%;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection .cr-media-intro h2{
+    font-size:clamp(3.55rem,12.5vw,5.8rem);
+    max-width:100%;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection .cr-media-intro p{
+    max-width:100%;
+    font-size:1rem;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body.cr-detail .cr-page .cr-service-media.cr-gas-connections-inspection{
+    transition:none!important;
+    animation:none!important;
+  }
+}
