@@ -54,8 +54,8 @@ body.cr-detail.cr-template-v1 .cr-reading-links{
 body.cr-detail.cr-template-v1 .cr-reading-links a{
   padding:15px 0 17px;
   min-height:50px;
-  font-size:.69rem;
-  line-height:1.4;
+  font-size:clamp(.8rem,.88vw,.9rem);
+  line-height:1.5;
   white-space:normal;
   overflow-wrap:break-word;
   color:#385667;
