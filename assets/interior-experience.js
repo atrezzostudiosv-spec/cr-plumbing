@@ -90,6 +90,13 @@
   addIcons(document);
   const main = document.querySelector('main.cr-page');
   if(!main) return;
+  // Remove migration-only labels from the public presentation, without touching source content.
+  for(const node of main.querySelectorAll('.cr-process .cr-hero-kicker, .cr-docu-media .cr-hero-kicker')){
+    const label=node.textContent.trim();
+    if(/^from (the )?original service page$/i.test(label) || /^from the service page$/i.test(label)){
+      node.textContent=node.closest('.cr-process')?'Service process':'Service overview';
+    }
+  }
   if(!main.id) main.id='main-content';
   const skip=document.createElement('a');skip.className='cr-skip-link';skip.href='#main-content';skip.textContent='Skip to content';body.insertBefore(skip,body.firstChild);
 
