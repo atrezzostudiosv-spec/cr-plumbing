@@ -162,6 +162,14 @@
       section.className='cr-service-media cr-service-media--'+mode+(group==='gas'||group==='electrical'?' cr-service-media--warm':'')+' cr-x-reveal';
       section.setAttribute('aria-label','Service photographs from the company website');
       section.innerHTML=`<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">SERVICE PHOTOGRAPHY / ${group.toUpperCase()}</span><h2>A CLOSER<br>LOOK.</h2><p>Photographs from CR Plumbing's original service page. They illustrate the service described above.</p></div>${assets.map((x,i)=>`<figure class="cr-media-figure"><div class="cr-media-frame"><img loading="lazy" decoding="async" width="${x.width}" height="${x.height}" alt="${escAttr(x.alt)}" src="${x.url}"></div><figcaption>Service image / ${String(i+1).padStart(2,'0')}</figcaption></figure>`).join('')}</div>`;
+      // Water Heaters pilot: replace the low-resolution archive gallery with
+      // an explicitly illustrative full-bleed inspection scene. Source-derived
+      // service text, FAQs, process and other pages are preserved unchanged.
+      if(slug==='/plumbing-services/water-heaters/'){
+        section.className='cr-service-media cr-water-heaters-inspection cr-x-reveal';
+        section.setAttribute('aria-label','Illustrative water heater inspection scene, not an actual CR Plumbing project');
+        section.innerHTML='<div class="cr-media-layout"><div class="cr-media-intro"><span class="cr-media-index">INSPECTION / WATER HEATERS</span><h2>A CLOSER<br>LOOK.</h2><p>A closer look at the equipment and fittings involved in residential water heater inspection. Illustrative imagery for this website proposal.</p></div></div>';
+      }
       const insertAfter=sections.length>=3?sections[1]:sections[0];
       insertAfter.insertAdjacentElement('afterend',section);
       if(motionOff.matches || !('IntersectionObserver' in window)){section.classList.add('is-visible')}
