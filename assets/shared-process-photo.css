@@ -1,0 +1,128 @@
+/* Atrezzo / CR Plumbing — photo-led How It Works for 66 source-backed service pages.
+   Photo is illustrative proposal artwork, never represented as a CR employee or completed job.
+   The section's real per-page steps are retained; only presentation changes. */
+body.cr-detail:not(.cr-company) .cr-page .cr-process {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: #0b2432;
+  background-image:
+    linear-gradient(90deg, rgba(5,23,35,.97) 0%, rgba(5,23,35,.94) 30%, rgba(5,23,35,.84) 43%, rgba(5,23,35,.45) 64%, rgba(5,23,35,.13) 100%),
+    linear-gradient(0deg, rgba(4,20,30,.43) 0%, transparent 54%),
+    url('/cr-plumbing/assets/images/cr-shared-how-it-works.webp');
+  background-size: cover, cover, cover;
+  background-position: center, center, center center;
+  background-repeat: no-repeat;
+  color: #fff;
+  min-height: clamp(730px, 96svh, 1050px);
+  padding: clamp(95px, 9vw, 145px) var(--edge);
+}
+body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1450px;
+  margin-inline: auto;
+}
+body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-inner > .cr-hero-kicker {
+  color: #72e1eb;
+}
+body.cr-detail:not(.cr-company) .cr-page .cr-process h2 {
+  max-width: 660px;
+  margin-bottom: 36px;
+  color: #fff;
+}
+body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-list {
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  gap: 0;
+  width: min(100%, 665px);
+}
+body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-item {
+  display: grid;
+  grid-template-columns: 78px minmax(0,1fr);
+  column-gap: 21px;
+  align-content: start;
+  border-top: 1px solid rgba(191,220,232,.52);
+  padding: 21px 0 24px;
+}
+body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-item b {
+  grid-row: span 2;
+  margin: 0;
+  font-size: clamp(2.8rem,4vw,3.9rem);
+  line-height: 1;
+  color: #6fe3ea;
+}
+body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-item h3 {
+  color: #fff;
+  margin: 0 0 10px;
+  font-size: clamp(1.65rem,2.4vw,2.5rem);
+  line-height: 1.05;
+}
+body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-item p {
+  grid-column: 2;
+  max-width: 48ch;
+  margin: 0;
+  color: #e4edf2;
+  font-size: clamp(.93rem,1.05vw,1.03rem);
+  line-height: 1.72;
+}
+@media (max-width: 1100px) {
+  body.cr-detail:not(.cr-company) .cr-page .cr-process {
+    background-image:
+      linear-gradient(90deg,rgba(5,23,35,.97) 0%,rgba(5,23,35,.88) 43%,rgba(5,23,35,.48) 72%,rgba(5,23,35,.24) 100%),
+      linear-gradient(0deg,rgba(4,20,30,.45),transparent 60%),
+      url('/cr-plumbing/assets/images/cr-shared-how-it-works.webp');
+    background-position: center,center,61% center;
+  }
+  body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-list {
+    width: min(100%,600px);
+  }
+}
+@media (max-width: 760px) {
+  body.cr-detail:not(.cr-company) .cr-page .cr-process {
+    display: block;
+    min-height: 0;
+    background: #0b2432;
+    padding: clamp(310px, 87vw, 430px) var(--edge) 82px;
+  }
+  body.cr-detail:not(.cr-company) .cr-page .cr-process::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto;
+    height: clamp(340px, 95vw, 480px);
+    z-index: 0;
+    background-image:
+      linear-gradient(0deg, #0b2432 0%, rgba(11,36,50,.12) 63%,rgba(11,36,50,.05) 100%),
+      url('/cr-plumbing/assets/images/cr-shared-how-it-works.webp');
+    background-position: center, 70% center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+  body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-inner {
+    max-width: 100%;
+  }
+  body.cr-detail:not(.cr-company) .cr-page .cr-process h2 {
+    font-size: clamp(3.35rem, 12vw, 5.4rem);
+    margin-bottom: 32px;
+  }
+  body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-item {
+    grid-template-columns: 58px minmax(0,1fr);
+    gap: 0 13px;
+    padding-block: 21px;
+  }
+  body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-item b {font-size: 2.7rem}
+  body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-item h3 {font-size: clamp(1.55rem,7vw,2.25rem)}
+  body.cr-detail:not(.cr-company) .cr-page .cr-process .cr-process-item p {font-size: .96rem}
+}
+@media (prefers-reduced-motion: reduce) {
+  body.cr-detail:not(.cr-company) .cr-page .cr-process,
+  body.cr-detail:not(.cr-company) .cr-page .cr-process::before {
+    background-attachment: scroll !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
