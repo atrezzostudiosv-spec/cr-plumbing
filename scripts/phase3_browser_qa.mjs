@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 import { mkdirSync, writeFileSync } from 'node:fs';
 
-const base = 'https://atrezzostudiosv-spec.github.io/cr-plumbing/';
+const base = process.env.BASE_URL || 'https://atrezzostudiosv-spec.github.io/cr-plumbing/';
 const paths = {
   maintenance: 'hvac/heating/maintenance-repair/',
   installation: 'hvac/heating/new-installation/'
@@ -61,15 +61,20 @@ for (const [pageName, path] of Object.entries(paths)) {
       const process=page.locator('.cr-process').first();
       await process.scrollIntoViewIfNeeded();
       await page.screenshot({path:stem+'-process.jpg',type:'jpeg',quality:54});
-      if(width===1440) {
+      const media=page.locator('.cr-docu-media img').first();
+      await media.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(400);
+      console.log('MEDIA '+JSON.stringify({page:pageName,width,...(await media.evaluate(el=>({loaded:el.complete && el.naturalWidth>0,
+       naturalWidth:el.naturalWidth,src:el.currentSrc})))}));
+      if(width===1440 || width===375) {
         for (const [label,selector] of [['hero','.cr-page-hero'],['chapter','.cr-detail-band'],['process','.cr-process']]) {
           const element=page.locator(selector).first();
           await element.scrollIntoViewIfNeeded();
           const img=await page.screenshot({type:'jpeg',quality:38,scale:'css'});
-          console.log('IMAGE_BEGIN '+pageName+'_'+label);
+          console.log('IMAGE_BEGIN '+pageName+'_'+label+'_'+width);
           const b64=img.toString('base64');
           for(let at=0;at<b64.length;at+=8000) console.log(b64.slice(at,at+8000));
-          console.log('IMAGE_END '+pageName+'_'+label);
+          console.log('IMAGE_END '+pageName+'_'+label+'_'+width);
         }
       }
     }
