@@ -97,3 +97,103 @@ body.cr-detail .cr-page-hero.cr-electrical-services-hero .cr-hero-lead{
     transition:none!important;
   }
 }
+
+
+/* Photo 08: editorial support, Electrical Services / A Closer Look.
+   User-supplied concept art; not verified work, staff, or location of CR.
+   Only the Electrical Services category page receives this scene. */
+body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics {
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  min-height:clamp(650px,82svh,860px);
+  padding:clamp(100px,10vw,150px) var(--edge);
+  color:#fff;
+  background-color:#09212f;
+  background-image:
+    linear-gradient(90deg,rgba(5,23,36,.98) 0%,rgba(5,23,36,.94) 28%,rgba(5,23,36,.79) 45%,rgba(5,23,36,.38) 70%,rgba(5,23,36,.12) 100%),
+    linear-gradient(0deg,rgba(5,23,36,.35),transparent 60%),
+    url('/cr-plumbing/assets/images/cr-electrical-diagnostics-bg.webp');
+  background-position:center,center,center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+}
+body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics::before {display:none}
+body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics .cr-media-layout {
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  max-width:1450px;
+  margin-inline:auto;
+}
+body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics .cr-media-intro {
+  padding:0;
+  width:min(100%,610px);
+  max-width:610px;
+}
+body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics .cr-media-index {
+  color:#a5dce9;
+  letter-spacing:.17em;
+}
+body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics .cr-media-intro h2 {
+  max-width:590px;
+  margin:20px 0 26px;
+  color:#fff;
+  font-size:clamp(4.3rem,7vw,7.4rem);
+  line-height:.9;
+  text-wrap:balance;
+}
+body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics .cr-media-intro p {
+  color:#e7eff3;
+  font-size:clamp(1rem,1.16vw,1.16rem);
+  line-height:1.8;
+  max-width:52ch;
+}
+@media(max-width:1024px) and (min-width:761px){
+  body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics {
+    background-image:
+      linear-gradient(90deg,rgba(5,23,36,.97),rgba(5,23,36,.87) 45%,rgba(5,23,36,.5) 100%),
+      url('/cr-plumbing/assets/images/cr-electrical-diagnostics-bg.webp');
+    background-position:center,66% center;
+  }
+}
+@media(max-width:760px){
+  body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics {
+    display:block;
+    min-height:0;
+    background:#09212f;
+    padding:clamp(330px,89vw,415px) var(--edge) 84px;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics::before {
+    content:'';
+    display:block;
+    position:absolute;
+    inset:0 0 auto;
+    height:clamp(360px,99vw,465px);
+    z-index:0;
+    pointer-events:none;
+    background-image:
+      linear-gradient(0deg,#09212f 0%,rgba(9,33,47,.18) 52%,rgba(9,33,47,.05) 100%),
+      url('/cr-plumbing/assets/images/cr-electrical-diagnostics-bg.webp');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center,74% center;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics .cr-media-intro {
+    width:100%; max-width:100%;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics .cr-media-intro h2 {
+    max-width:100%;font-size:clamp(3.65rem,12.8vw,5.8rem);
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics .cr-media-intro p {
+    max-width:100%;font-size:1rem;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body.cr-detail .cr-page .cr-service-media.cr-electrical-diagnostics{
+    transition:none!important;animation:none!important;
+  }
+}
