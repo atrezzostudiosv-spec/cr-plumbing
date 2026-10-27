@@ -1,0 +1,320 @@
+/* ATREZZO / CR Plumbing — PHASE 3 / MASTER SERVICE TEMPLATE (4 approved pilots).
+   Editorial, readable, vertical and responsive. No commercial claims or service
+   content live here. Apply to a page only by adding body.cr-template-v1.
+   No external fonts, photos, logos or additional scripts required. */
+
+body.cr-detail.cr-template-v1{--cr-templates-ink:#102f40;--cr-templates-copy:#2b4351;--cr-templates-muted:#3c5768}
+body.cr-detail.cr-template-v1 .cr-page{min-width:0}
+body.cr-detail.cr-template-v1 .cr-page-hero .cr-hero-inner{
+  width:min(100%,1440px);
+  grid-template-columns:minmax(0,1fr);
+  gap:0;
+}
+body.cr-detail.cr-template-v1 .cr-page-hero .cr-hero-inner > div:first-child{max-width:740px;min-width:0}
+body.cr-detail.cr-template-v1 .cr-page-hero .cr-hero-aside{display:none}
+body.cr-detail.cr-template-v1 .cr-page-hero h1{
+  max-width:790px;
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:auto;
+  text-wrap:balance;
+}
+body.cr-detail.cr-template-v1 .cr-page-hero .cr-hero-lead{
+  max-width:640px;
+  color:#edf4f6;
+  line-height:1.76;
+  font-size:clamp(1rem,1.2vw,1.15rem);
+}
+body.cr-detail.cr-template-v1 .cr-page-hero .cr-hero-actions{gap:13px}
+body.cr-detail.cr-template-v1 .cr-page-hero .cr-hero-actions .btn{min-height:54px}
+
+/* Desktop: all indexed chapter links are visible in a real wrapping row. */
+body.cr-detail.cr-template-v1 .cr-reading-index{
+  background:#f9fcfc;
+  border-bottom:1px solid #cbdbe1;
+}
+body.cr-detail.cr-template-v1 .cr-reading-track{
+  width:min(100%,1540px);
+  padding:0 var(--edge);
+  gap:clamp(23px,3vw,42px);
+  min-height:74px;
+}
+body.cr-detail.cr-template-v1 .cr-reading-label{color:#125b71}
+body.cr-detail.cr-template-v1 .cr-reading-links{
+  display:flex;
+  flex-wrap:wrap;
+  flex:1 1 auto;
+  align-items:center;
+  justify-content:flex-start;
+  gap:0 clamp(13px,1.8vw,27px);
+  overflow:visible;
+  max-width:none;
+  white-space:normal;
+}
+body.cr-detail.cr-template-v1 .cr-reading-links a{
+  padding:15px 0 17px;
+  min-height:50px;
+  font-size:.69rem;
+  line-height:1.4;
+  white-space:normal;
+  overflow-wrap:break-word;
+  color:#385667;
+}
+body.cr-detail.cr-template-v1 .cr-reading-links a:hover,
+body.cr-detail.cr-template-v1 .cr-reading-links a[aria-current="location"]{
+  color:#0a4963;
+  border-bottom-color:#0c819e;
+}
+body.cr-detail.cr-template-v1 .cr-reading-mobile{display:none}
+
+/* Editorial rhythm instead of repeated cards. Keep every source paragraph. */
+body.cr-detail.cr-template-v1 .cr-detail-band{
+  padding-inline:var(--edge);
+}
+body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-wrap{
+  width:100%;
+  max-width:1440px;
+  margin-inline:auto;
+  min-width:0;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2{
+  max-width:930px;
+  font-size:clamp(3.2rem,5.5vw,6rem);
+  line-height:.99;
+  letter-spacing:-.02em;
+  overflow-wrap:break-word;
+  text-wrap:balance;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-index{
+  font-size:clamp(.68rem,.75vw,.77rem);
+  line-height:1.5;
+  letter-spacing:.11em;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-intro p{
+  font-size:clamp(1rem,1.14vw,1.1rem);
+  line-height:1.85;
+  max-width:79ch;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band .cr-list-row h3{
+  overflow-wrap:break-word;
+  text-wrap:balance;
+  line-height:1.12;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band .cr-list-row p{
+  font-size:clamp(.98rem,1.06vw,1.05rem);
+  line-height:1.82;
+  max-width:77ch;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band--white .cr-chapter-intro p,
+body.cr-detail.cr-template-v1 .cr-detail-band--white .cr-list-row p,
+body.cr-detail.cr-template-v1 .cr-detail-band--slate .cr-chapter-intro p,
+body.cr-detail.cr-template-v1 .cr-detail-band--slate .cr-list-row p{
+  color:var(--cr-templates-copy);
+}
+body.cr-detail.cr-template-v1 .cr-detail-band .cr-list-row a{
+  text-underline-offset:.2em;
+}
+
+/* Electrical and Gas source pages contained unrelated side photographs.
+   Use a typographic editorial interlude until a correct photo is supplied. */
+body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media{
+  isolation:isolate;
+  position:relative;
+  overflow:hidden;
+  min-height:clamp(400px,55svh,690px);
+  display:flex;
+  align-items:center;
+  padding:clamp(92px,10vw,150px) var(--edge);
+  background:
+    radial-gradient(circle at 83% 27%,rgba(52,140,163,.17),transparent 36%),
+    linear-gradient(116deg,#081e2c 0%,#0c3042 100%);
+  color:#fff;
+}
+body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media .cr-docu-media-inner{
+  display:block;
+  width:100%;
+  max-width:1440px;
+  margin-inline:auto;
+}
+body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media .cr-docu-media-inner>div{
+  max-width:820px;
+}
+body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media img{display:none}
+body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media h2{
+  font-size:clamp(3.35rem,6.2vw,7.3rem);
+  line-height:.91;
+  max-width:790px;
+  color:#fff;
+  text-wrap:balance;
+}
+body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media p{
+  max-width:72ch;
+  color:#e6f0f3;
+  font-size:clamp(1rem,1.17vw,1.16rem);
+  line-height:1.85;
+}
+body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media .cr-hero-kicker{
+  color:#91e2eb;
+}
+
+/* FAQ and related services: legible paragraph scale, consistent interaction. */
+body.cr-detail.cr-template-v1 .cr-questions .cr-qa summary{
+  color:#193849;
+  line-height:1.5;
+  overflow-wrap:break-word;
+}
+body.cr-detail.cr-template-v1 .cr-questions .cr-qa p{
+  color:#314e5f;
+  font-size:clamp(.98rem,1.05vw,1.05rem);
+  line-height:1.84;
+}
+body.cr-detail.cr-template-v1 .cr-related-list a{overflow-wrap:break-word}
+body.cr-detail.cr-template-v1 a:focus-visible,
+body.cr-detail.cr-template-v1 button:focus-visible,
+body.cr-detail.cr-template-v1 summary:focus-visible{
+  outline:3px solid #17b2cd;
+  outline-offset:4px;
+}
+
+/* Mobile/tablet: a native, keyboard-accessible menu, not sideways scrolling. */
+@media(max-width:1080px){
+  body.cr-detail.cr-template-v1 .cr-reading-index{
+    position:relative;
+    top:auto;
+    z-index:45;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-track{
+    padding:11px var(--edge);
+    display:block;
+    min-height:0;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-label,
+  body.cr-detail.cr-template-v1 .cr-reading-links{display:none}
+  body.cr-detail.cr-template-v1 .cr-reading-mobile{
+    display:block;
+    position:relative;
+    width:100%;
+    font-family:Manrope,Arial,sans-serif;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-mobile summary{
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    min-height:51px;
+    width:100%;
+    padding:12px 16px;
+    border:1px solid #bfdae2;
+    background:#fff;
+    color:#113b4c;
+    border-radius:4px;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-mobile summary::-webkit-details-marker{display:none}
+  body.cr-detail.cr-template-v1 .cr-reading-mobile-label{
+    flex:0 0 auto;
+    font-size:.75rem;
+    font-weight:850;
+    text-transform:uppercase;
+    letter-spacing:.07em;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-current{
+    margin-left:auto;
+    min-width:0;
+    flex:0 1 auto;
+    font-size:.78rem;
+    color:#466576;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-mobile summary svg{
+    flex:0 0 auto;
+    margin-left:2px;
+    transition:transform .2s ease;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-mobile[open] summary svg{transform:rotate(180deg)}
+  body.cr-detail.cr-template-v1 .cr-reading-mobile-links{
+    position:absolute;
+    top:calc(100% + 4px);
+    left:0;right:0;
+    background:#fff;
+    border:1px solid #bfd7df;
+    box-shadow:0 16px 38px rgba(5,29,43,.18);
+    border-radius:4px;
+    z-index:50;
+    padding:7px 10px;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-mobile-links a{
+    display:flex;
+    gap:12px;
+    align-items:center;
+    border-bottom:1px solid #e3edf0;
+    padding:14px 11px;
+    font-size:.85rem;
+    font-weight:720;
+    line-height:1.55;
+    color:#23495b;
+    text-decoration:none;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-mobile-links a:last-child{border-bottom:0}
+  body.cr-detail.cr-template-v1 .cr-reading-mobile-links a span{
+    color:#187d98;
+    font-size:.71rem;
+    font-weight:800;
+    flex:0 0 auto;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-mobile-links a:hover,
+  body.cr-detail.cr-template-v1 .cr-reading-mobile-links a[aria-current="location"]{
+    color:#07526a;
+    background:#ecf5f7;
+  }
+  body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2{
+    font-size:clamp(3.1rem,6.6vw,5.2rem);
+  }
+}
+@media(max-width:820px){
+  body.cr-detail.cr-template-v1 .cr-detail-band,
+  body.cr-detail.cr-template-v1 .cr-questions,
+  body.cr-detail.cr-template-v1 .cr-related{
+    padding-block:clamp(77px,10vw,104px);
+  }
+  body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2{
+    font-size:clamp(3.1rem,9.3vw,4.8rem);
+  }
+  body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-wrap,
+  body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-intro{
+    min-width:0;
+  }
+  body.cr-detail.cr-template-v1 .cr-detail-band .cr-list-row h3{font-size:clamp(1.7rem,5.8vw,2.5rem)}
+  body.cr-detail.cr-template-v1 .cr-page-hero .cr-hero-actions{
+    display:grid;
+    grid-template-columns:1fr;
+    max-width:440px;
+  }
+  body.cr-detail.cr-template-v1 .cr-page-hero .cr-hero-actions .btn{width:100%}
+}
+@media(max-width:550px){
+  body.cr-detail.cr-template-v1 .cr-reading-track{padding:11px var(--edge)}
+  body.cr-detail.cr-template-v1 .cr-reading-mobile summary{
+    padding:12px 11px;
+    gap:7px;
+  }
+  body.cr-detail.cr-template-v1 .cr-reading-mobile-label{font-size:.7rem;letter-spacing:.025em}
+  body.cr-detail.cr-template-v1 .cr-reading-current{font-size:.72rem}
+  body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-heading h2{font-size:clamp(2.9rem,11vw,4.45rem)}
+  body.cr-detail.cr-template-v1 .cr-detail-band .cr-list-row p,
+  body.cr-detail.cr-template-v1 .cr-detail-band .cr-chapter-intro p{
+    font-size:1rem;
+    line-height:1.8;
+  }
+  body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media{
+    padding:85px var(--edge);
+  }
+  body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media h2{
+    font-size:clamp(3.15rem,11.6vw,5.15rem);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body.cr-detail.cr-template-v1 .cr-reading-mobile summary svg{transition:none}
+}
