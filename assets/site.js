@@ -13,3 +13,23 @@ if(document.body?.classList.contains('cr-detail')){
   if(!document.querySelector('link[href*="interior-experience.css"]')){const layer=document.createElement('link');layer.rel='stylesheet';layer.href='/cr-plumbing/assets/interior-experience.css?v=20261026-03';document.head.appendChild(layer)}
   if(!document.querySelector('script[src*="interior-experience.js"]')){const module=document.createElement('script');module.src='/cr-plumbing/assets/interior-experience.js?v=20261026-03';module.defer=true;document.body.appendChild(module)}
 }
+
+/* Atrezzo shared navigation upgrade.
+   Existing static navigation stays as a functional fallback if an asset fails. */
+if(document.querySelector('.site-head')&&!document.querySelector('script[data-cr-nav-data]')){
+  const navCss=document.createElement('link');
+  navCss.rel='stylesheet';
+  navCss.href='/cr-plumbing/assets/nav-system.css?v=20261027-02';
+  document.head.appendChild(navCss);
+  const data=document.createElement('script');
+  data.src='/cr-plumbing/assets/nav-data.js?v=20261027-02';
+  data.dataset.crNavData='true';
+  data.onload=()=>{
+    if(!window.CR_NAV_DATA)return;
+    const ui=document.createElement('script');
+    ui.src='/cr-plumbing/assets/nav-system.js?v=20261027-02';
+    ui.dataset.crNavSystem='true';
+    document.body.appendChild(ui);
+  };
+  document.body.appendChild(data);
+}
