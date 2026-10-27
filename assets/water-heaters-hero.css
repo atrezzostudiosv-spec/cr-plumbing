@@ -86,3 +86,107 @@
     will-change:auto!important;
   }
 }
+
+/* CR Plumbing — Water Heaters / A Closer Look.
+   Single full-bleed, service-appropriate concept photograph.
+   Original informational chapters, FAQs, navigation and CTAs remain unchanged. */
+body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background-color: #081f2e;
+  background-image:
+    linear-gradient(90deg, rgba(5,22,33,.97) 0%, rgba(5,22,33,.94) 28%, rgba(5,22,33,.82) 42%, rgba(5,22,33,.45) 62%, rgba(5,22,33,.13) 100%),
+    linear-gradient(0deg, rgba(6,25,37,.35), transparent 60%),
+    url('/cr-plumbing/assets/images/cr-water-heaters-inspection-bg.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center,center,center center;
+  min-height: clamp(650px,82svh,850px);
+  padding: clamp(105px,10vw,150px) var(--edge);
+}
+body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection::before {display:none}
+body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection .cr-media-layout {
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  max-width:1450px;
+  margin-inline:auto;
+}
+body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection .cr-media-intro {
+  padding:0;
+  width:min(100%,600px);
+  max-width:600px;
+}
+body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection .cr-media-index {
+  color:#83e5ef;
+  letter-spacing:.17em;
+}
+body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection .cr-media-intro h2 {
+  max-width:580px;
+  color:#fff;
+  font-size:clamp(4.3rem,7vw,7.4rem);
+  line-height:.9;
+  margin-top:20px;
+  margin-bottom:26px;
+  text-wrap:balance;
+}
+body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection .cr-media-intro p {
+  color:#e3eef2;
+  font-size:clamp(1rem,1.17vw,1.17rem);
+  line-height:1.8;
+  max-width:52ch;
+}
+@media(max-width:1024px){
+  body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection {
+    background-image:
+      linear-gradient(90deg, rgba(5,22,33,.97) 0%, rgba(5,22,33,.90) 40%, rgba(5,22,33,.52) 76%, rgba(5,22,33,.25) 100%),
+      url('/cr-plumbing/assets/images/cr-water-heaters-inspection-bg.webp');
+    background-position:center,67% center;
+  }
+}
+@media(max-width:760px){
+  body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection {
+    display:block;
+    min-height:0;
+    background:#081f2e;
+    padding:clamp(340px,89vw,425px) var(--edge) 87px;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection::before {
+    content:'';
+    display:block;
+    position:absolute;
+    inset:0 0 auto;
+    height:clamp(375px,99vw,480px);
+    z-index:0;
+    pointer-events:none;
+    background-image:
+      linear-gradient(0deg,#081f2e 0%,rgba(8,31,46,.1) 68%,rgba(8,31,46,.05) 100%),
+      url('/cr-plumbing/assets/images/cr-water-heaters-inspection-bg.webp');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center,70% center;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection .cr-media-intro {
+    width:100%;
+    max-width:100%;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection .cr-media-intro h2 {
+    font-size:clamp(3.7rem,13vw,5.8rem);
+    max-width:100%;
+  }
+  body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection .cr-media-intro p {
+    max-width:100%;
+    font-size:1rem;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  body.cr-detail .cr-page .cr-service-media.cr-water-heaters-inspection {
+    transition:none!important;
+    animation:none!important;
+  }
+}
