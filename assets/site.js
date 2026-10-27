@@ -14,6 +14,26 @@ if(document.body?.classList.contains('cr-detail')){
   if(!document.querySelector('script[src*="interior-experience.js"]')){const module=document.createElement('script');module.src='/cr-plumbing/assets/interior-experience.js?v=20261026-03';module.defer=true;document.body.appendChild(module)}
 }
 
+/* Shared How It Works photograph for source-backed service pages.
+   Preflight the uploaded image before applying the new layout; a missing asset
+   can never leave a broken photo background. Company pages and Home are untouched. */
+if(document.body?.classList.contains('cr-detail') &&
+   !document.body.classList.contains('cr-company') &&
+   document.querySelector('.cr-page .cr-process') &&
+   !document.querySelector('link[data-cr-shared-process-photo]')){
+  const processPhoto=new Image();
+  processPhoto.decoding='async';
+  processPhoto.onload=()=>{
+    if(document.querySelector('link[data-cr-shared-process-photo]'))return;
+    const layer=document.createElement('link');
+    layer.rel='stylesheet';
+    layer.href='/cr-plumbing/assets/shared-process-photo.css?v=20261027-01';
+    layer.dataset.crSharedProcessPhoto='true';
+    document.head.appendChild(layer);
+  };
+  processPhoto.src='/cr-plumbing/assets/images/cr-shared-how-it-works.webp';
+}
+
 /* Atrezzo shared navigation upgrade.
    Existing static navigation stays as a functional fallback if an asset fails. */
 if(document.querySelector('.site-head')&&!document.querySelector('script[data-cr-nav-data]')){
