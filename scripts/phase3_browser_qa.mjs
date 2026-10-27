@@ -4,7 +4,11 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 const base = process.env.BASE_URL || 'https://atrezzostudiosv-spec.github.io/cr-plumbing/';
 const paths = {
   maintenance: 'hvac/heating/maintenance-repair/',
-  installation: 'hvac/heating/new-installation/'
+  installation: 'hvac/heating/new-installation/',
+  plumbing_pilot: 'plumbing-services/water-heaters/',
+  hvac_pilot: 'hvac/dryer-vent-duct/',
+  electrical_pilot: 'electrical-services/',
+  gas_pilot: 'gas-services/'
 };
 const widths = [375,768,1024,1440];
 mkdirSync('qa-output', {recursive:true});
@@ -51,6 +55,24 @@ for (const [pageName, path] of Object.entries(paths)) {
     console.log('RESULT '+JSON.stringify({page:pageName,width,http:res.http,h1:res.h1,faq:res.faq,overflow:res.scrollWidth-res.viewport,
       overflowing:res.overflowing,broken:networkErrors,hero:res.heroBackground,docu:res.docuImage,sections:res.headings.map(x=>x.heading||x.type)}));
     if(res.h1!==1 || res.scrollWidth>width+3 || (navigation && navigation.status()!==200) || networkErrors.some(s=>s.startsWith('JS ')))failures++;
+    if (width===375) {
+      const nav=page.locator('#nav-toggle');
+      if(await nav.isVisible()) {
+        await nav.click();
+        const state=await nav.getAttribute('aria-expanded');
+        console.log('NAV '+pageName+' expanded='+state);
+        if(state!=='true') failures++;
+        await nav.click();
+      }
+      const faq=page.locator('.cr-qa summary').first();
+      if(await faq.count()) {
+        await faq.scrollIntoViewIfNeeded();
+        await faq.click();
+        const opened=await faq.evaluate(el=>el.closest('details')?.open);
+        console.log('FAQ '+pageName+' opened='+opened);
+        if(!opened)failures++;
+      }
+    }
     const stem='qa-output/'+pageName+'-'+width;
     await page.screenshot({path:stem+'-full.jpg',type:'jpeg',quality:55,fullPage:true});
     if(width===375||width===1440){
@@ -62,12 +84,13 @@ for (const [pageName, path] of Object.entries(paths)) {
       await process.scrollIntoViewIfNeeded();
       await page.screenshot({path:stem+'-process.jpg',type:'jpeg',quality:54});
       const media=page.locator('.cr-docu-media img').first();
-      await media.scrollIntoViewIfNeeded();
+      if(await media.count()) {await media.scrollIntoViewIfNeeded();
       await page.waitForTimeout(400);
       console.log('MEDIA '+JSON.stringify({page:pageName,width,...(await media.evaluate(el=>({loaded:el.complete && el.naturalWidth>0,
-       naturalWidth:el.naturalWidth,src:el.currentSrc})))}));
+       naturalWidth:el.naturalWidth,src:el.currentSrc})))}));}
       if(width===1440 || width===375) {
-        for (const [label,selector] of [['hero','.cr-page-hero'],['chapter','.cr-detail-band'],['process','.cr-process']]) {
+        for (const [label,selector] of (pageName.includes('pilot') ? [['hero','.cr-page-hero'],['chapter','.cr-detail-band']] : [['hero','.cr-page-hero'],['chapter','.cr-detail-band'],['process','.cr-process']])) {
+          if (pageName.includes('pilot') && !((label==='hero' && width===375) || (label==='chapter' && width===1440))) continue;
           const element=page.locator(selector).first();
           await element.scrollIntoViewIfNeeded();
           const img=await page.screenshot({type:'jpeg',quality:38,scale:'css'});
