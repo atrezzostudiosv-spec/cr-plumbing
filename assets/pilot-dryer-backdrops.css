@@ -1,0 +1,183 @@
+/* CR Plumbing / Dryer Vent pilot — cinematic full-bleed photographic chapters.
+   Images are illustrative AI-generated artwork, not documented client projects.
+   Scoped to this single approved pilot; Home and other service pages are not affected. */
+body.cr-detail.cr-pilot-dryer{
+  --cr-pilot-ink:#0b2330;
+  --cr-pilot-over:#071a25;
+}
+body.cr-pilot-dryer .cr-docu-media,
+body.cr-pilot-dryer .cr-service-media,
+body.cr-pilot-dryer .cr-process,
+body.cr-pilot-dryer .cr-end{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  background-color:#0a2433;
+  color:#fff;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+/* 1 / Service overview — subject remains right, copy remains left. */
+body.cr-pilot-dryer .cr-docu-media{
+  background-image:
+    linear-gradient(90deg,rgba(5,21,31,.97) 0%,rgba(5,21,31,.91) 28%,rgba(5,21,31,.72) 46%,rgba(5,21,31,.25) 75%,rgba(5,21,31,.12) 100%),
+    url('/cr-plumbing/assets/images/pilot-dryer-service.webp');
+  background-position:center,right center;
+  min-height:clamp(590px,78svh,830px);
+  display:flex;
+  align-items:center;
+  padding:clamp(95px,10vw,160px) var(--edge);
+}
+body.cr-pilot-dryer .cr-docu-media .cr-docu-media-inner{
+  position:relative;
+  z-index:2;
+  display:block;
+  width:100%;
+  max-width:1450px;
+  margin-inline:auto;
+}
+body.cr-pilot-dryer .cr-docu-media .cr-docu-media-inner>div{max-width:610px}
+body.cr-pilot-dryer .cr-docu-media img{display:none!important}
+body.cr-pilot-dryer .cr-docu-media .cr-hero-kicker{color:#70e4f0}
+body.cr-pilot-dryer .cr-docu-media h2{
+  font-size:clamp(3.6rem,6.5vw,7.1rem);
+  line-height:.9;
+  color:#fff;
+  max-width:580px;
+  text-wrap:balance;
+  margin-bottom:26px;
+}
+body.cr-pilot-dryer .cr-docu-media p{
+  font-size:clamp(1rem,1.2vw,1.17rem);
+  line-height:1.88;
+  color:#e1edf0;
+  max-width:52ch;
+  margin-bottom:0;
+}
+/* 2 / A closer look — full scene instead of archival images in circular frames. */
+body.cr-pilot-dryer .cr-service-media{
+  background-image:url('/cr-plumbing/assets/images/pilot-dryer-closer.webp');
+  background-position:center,right center;
+  min-height:clamp(590px,78svh,820px);
+  display:flex;
+  align-items:center;
+  padding:clamp(95px,10vw,150px) var(--edge);
+}
+body.cr-pilot-dryer .cr-service-media:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,rgba(5,21,31,.98) 0%,rgba(5,21,31,.93) 29%,rgba(5,21,31,.67) 49%,rgba(5,21,31,.21) 78%,rgba(5,21,31,.08) 100%);
+  z-index:0;
+}
+body.cr-pilot-dryer .cr-service-media .cr-media-layout,
+body.cr-pilot-dryer .cr-service-media.cr-service-media--focus .cr-media-layout,
+body.cr-pilot-dryer .cr-service-media.cr-service-media--single .cr-media-layout{
+  position:relative;
+  display:block;
+  width:100%;
+  max-width:1450px;
+  margin-inline:auto;
+  z-index:1;
+}
+body.cr-pilot-dryer .cr-service-media .cr-media-intro{
+  width:min(100%,610px);
+  padding:0;
+}
+body.cr-pilot-dryer .cr-service-media .cr-media-intro h2{
+  font-size:clamp(4rem,7vw,8rem);
+  line-height:.9;
+  max-width:540px;
+  color:#fff;
+}
+body.cr-pilot-dryer .cr-service-media .cr-media-intro p{
+  max-width:49ch;
+  color:#e0edf0;
+  font-size:clamp(1rem,1.2vw,1.14rem);
+  line-height:1.86;
+}
+body.cr-pilot-dryer .cr-service-media .cr-media-figure{display:none!important}
+body.cr-pilot-dryer .cr-service-media .cr-media-index{color:#78e5ef}
+/* 3 / How It Works — retain approved layout and copy, only add cinematic background. */
+body.cr-pilot-dryer .cr-process{
+  background-image:
+    linear-gradient(90deg,rgba(5,21,31,.95),rgba(5,21,31,.85) 58%,rgba(5,21,31,.66)),
+    url('/cr-plumbing/assets/images/pilot-dryer-process.webp');
+  min-height:clamp(610px,74svh,820px);
+  display:flex;
+  align-items:center;
+  padding-block:clamp(110px,10vw,160px);
+}
+body.cr-pilot-dryer .cr-process .cr-process-inner{
+  position:relative;
+  z-index:1;
+  width:100%;
+  margin-inline:auto;
+}
+body.cr-pilot-dryer .cr-process .cr-process-item p{color:#e1ebf0}
+body.cr-pilot-dryer .cr-process .cr-process-item{border-top-color:#a6c6d2}
+/* 4 / Final CTA — replace solid blue with full-bleed residential visit scene. */
+body.cr-pilot-dryer .cr-end{
+  background-image:
+    linear-gradient(90deg,rgba(4,25,39,.98) 0%,rgba(4,25,39,.89) 34%,rgba(5,34,53,.57) 57%,rgba(5,34,53,.25) 100%),
+    url('/cr-plumbing/assets/images/pilot-dryer-cta.webp');
+  min-height:clamp(630px,80svh,900px);
+  display:flex;
+  align-items:center;
+  padding:clamp(105px,10vw,170px) var(--edge);
+}
+body.cr-pilot-dryer .cr-end:after{display:none}
+body.cr-pilot-dryer .cr-end .cr-end-inner{width:100%;margin-inline:auto}
+body.cr-pilot-dryer .cr-end h2{max-width:880px;color:#fff}
+body.cr-pilot-dryer .cr-end p{color:#e9f1f4;max-width:58ch}
+body.cr-pilot-dryer .cr-end .btn{position:relative;z-index:3}
+/* Responsive art direction: protect legibility on tablet/mobile. */
+@media(max-width:1024px){
+  body.cr-pilot-dryer .cr-docu-media,
+  body.cr-pilot-dryer .cr-service-media{
+    background-position:center,62% center;
+  }
+  body.cr-pilot-dryer .cr-end{background-position:center,64% center}
+}
+@media(max-width:760px){
+  body.cr-pilot-dryer .cr-docu-media,
+  body.cr-pilot-dryer .cr-service-media,
+  body.cr-pilot-dryer .cr-process,
+  body.cr-pilot-dryer .cr-end{
+    min-height:auto;
+    padding:clamp(90px,14vw,130px) var(--edge);
+  }
+  body.cr-pilot-dryer .cr-docu-media{
+    background-image:
+      linear-gradient(90deg,rgba(5,21,31,.94),rgba(5,21,31,.80)),
+      url('/cr-plumbing/assets/images/pilot-dryer-service.webp');
+  }
+  body.cr-pilot-dryer .cr-service-media:before{
+    background:linear-gradient(90deg,rgba(5,21,31,.96),rgba(5,21,31,.8));
+  }
+  body.cr-pilot-dryer .cr-process{
+    background-image:
+      linear-gradient(90deg,rgba(5,21,31,.94),rgba(5,21,31,.85)),
+      url('/cr-plumbing/assets/images/pilot-dryer-process.webp');
+  }
+  body.cr-pilot-dryer .cr-end{
+    background-image:
+      linear-gradient(90deg,rgba(4,25,39,.94),rgba(4,25,39,.82)),
+      url('/cr-plumbing/assets/images/pilot-dryer-cta.webp');
+  }
+  body.cr-pilot-dryer .cr-docu-media h2{
+    font-size:clamp(3.4rem,12vw,5.5rem);
+    max-width:100%;
+  }
+  body.cr-pilot-dryer .cr-service-media .cr-media-intro h2{
+    font-size:clamp(3.6rem,14vw,5.9rem);
+  }
+  body.cr-pilot-dryer .cr-end h2{font-size:clamp(4rem,13vw,6.8rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  body.cr-pilot-dryer .cr-docu-media,
+  body.cr-pilot-dryer .cr-service-media,
+  body.cr-pilot-dryer .cr-process,
+  body.cr-pilot-dryer .cr-end{background-attachment:scroll!important}
+}
