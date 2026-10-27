@@ -235,9 +235,9 @@ body.cr-detail.cr-template-v1 summary:focus-visible{
   }
   body.cr-detail.cr-template-v1 .cr-reading-mobile[open] summary svg{transform:rotate(180deg)}
   body.cr-detail.cr-template-v1 .cr-reading-mobile-links{
-    position:absolute;
-    top:calc(100% + 4px);
-    left:0;right:0;
+    position:relative;
+    margin-top:4px;
+    width:100%;
     background:#fff;
     border:1px solid #bfd7df;
     box-shadow:0 16px 38px rgba(5,29,43,.18);
