@@ -127,7 +127,19 @@
   index.className='cr-reading-index';
   index.setAttribute('aria-label','On this service page');
   const pilotGuide=body.classList.contains('cr-template-v1');
-  const links=sections.map((s,i)=>({id:s.id,title:s.querySelector('h2')?.textContent.trim().replace(/\s+/g,' ')||'Details',num:String(i+1).padStart(2,'0')}));
+  // Short labels avoid oversized multi-row navigation without changing page headings.
+  const guideLabels={
+    '/plumbing-services/water-heaters/':['Overview','Water Heater Services','Repair & Maintenance'],
+    '/hvac/dryer-vent-duct/':['Overview','Dryer Vent Services','Care & Warning Signs'],
+    '/electrical-services/':['Overview','Electrical Services','Inspections & Troubleshooting'],
+    '/gas-services/':['Overview','Installation & Repair','Gas Work & Safety']
+  };
+  const selectedLabels=pilotGuide?guideLabels[decodeURI(location.pathname).replace(BASE,'')]:null;
+  const links=sections.map((s,i)=>({
+    id:s.id,
+    title:selectedLabels?.[i]||s.querySelector('h2')?.textContent.trim().replace(/\s+/g,' ')||'Details',
+    num:String(i+1).padStart(2,'0')
+  }));
   if(main.querySelector('.cr-process')){
     const el=main.querySelector('.cr-process');
     el.id='cr-service-process';
@@ -182,7 +194,11 @@
       const assets=manifest.services[slug];
       const group=slug.startsWith('/plumbing-services')?'plumbing':slug.startsWith('/hvac')?'hvac':slug.startsWith('/electrical-services')?'electrical':'gas';
       const catPhoto=manifest.categories[group];
-      if(catPhoto){hero.style.setProperty('--page-art',`url("${catPhoto}")`)}
+      // The four approved photographic pilot heroes must never be replaced
+      // by older, generic category art from the legacy source manifest.
+      if(catPhoto&&!body.classList.contains('cr-template-v1')){
+        hero.style.setProperty('--page-art',`url("${catPhoto}")`);
+      }
       if(!assets||!assets.length)return;
       const section=document.createElement('section');
       const num=sections.length;
