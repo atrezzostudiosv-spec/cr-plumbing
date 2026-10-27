@@ -141,6 +141,20 @@ body.cr-detail.cr-template-v1 .cr-detail-band--navy.cr-chapter--chapter .cr-chap
   border-color:#a7bfca;
 }
 
+/* Process-type chapters stay genuinely dark regardless of their source class. */
+body.cr-detail.cr-template-v1 .cr-detail-band.cr-chapter--steps{
+  background:#0b2230;
+  color:#fff;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band.cr-chapter--steps .cr-chapter-heading h2,
+body.cr-detail.cr-template-v1 .cr-detail-band.cr-chapter--steps .cr-list-row h3{
+  color:#fff;
+}
+body.cr-detail.cr-template-v1 .cr-detail-band.cr-chapter--steps .cr-chapter-intro p,
+body.cr-detail.cr-template-v1 .cr-detail-band.cr-chapter--steps .cr-list-row p{
+  color:#dcebf0!important;
+}
+
 /* Electrical and Gas source pages contained unrelated side photographs.
    Use a typographic editorial interlude until a correct photo is supplied. */
 body.cr-detail.cr-template-v1.cr-template-utility .cr-docu-media{
