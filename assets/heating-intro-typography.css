@@ -1,0 +1,14 @@
+/* Heating Installation / phase-3: single verified typographic fix.
+   Preserves the chapter order, all original copy, FAQ, CTA and approved imagery. */
+body.cr-detail.cr-template-v1.cr-heating-installation .cr-detail-band .cr-chapter-intro .cr-intro-subheading{
+  font-family:Manrope,Arial,sans-serif;
+  font-size:clamp(1.2rem,1.65vw,1.55rem);
+  font-weight:600;
+  line-height:1.42;
+  letter-spacing:-.012em;
+  text-transform:none;
+  max-width:36ch;
+  margin:0 0 1.25rem;
+  color:#183947;
+  text-wrap:balance;
+}
