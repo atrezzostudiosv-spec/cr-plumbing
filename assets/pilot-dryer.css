@@ -1,0 +1,161 @@
+/* ATREZZO / CR Plumbing — single-page editorial pilot.
+   Scope: /hvac/dryer-vent-duct/ only.
+   All source paragraphs, anchors, FAQs and the approved How It Works → footer remain present. */
+body.cr-detail.cr-pilot-dryer{--pilot-ink:#102a38;--pilot-cyan:#087f9b}
+body.cr-pilot-dryer .cr-page-hero .cr-hero-lead{color:#eef7f9;max-width:670px}
+body.cr-pilot-dryer .cr-chapter-index{color:#096581}
+body.cr-pilot-dryer .cr-chapter-intro p,
+body.cr-pilot-dryer .cr-list-row p{color:#263f4e}
+body.cr-pilot-dryer .cr-row-index{color:#076d8e}
+body.cr-pilot-dryer .cr-detail-band{position:relative;isolation:isolate}
+/* 01 — introduction: editorial typographic rail and legible four-point explanation. */
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening{background:#fff;padding-block:clamp(90px,8vw,126px)}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-wrap{
+ display:grid;grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);
+ column-gap:clamp(48px,7.2vw,130px);align-items:start
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-heading{
+ display:block;grid-column:1;grid-row:1/span 2;margin:0
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-heading h2{
+ font-size:clamp(4.25rem,7vw,7.5rem);line-height:.88;max-width:380px;margin-top:32px
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-intro{
+ display:block;grid-column:2;grid-row:1;margin:0 0 30px;border-top:1px solid #acc6ce;padding-top:24px
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-intro:before{display:none}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-intro p:first-child{
+ color:#203c4a;font-size:clamp(1.18rem,1.55vw,1.51rem);line-height:1.73;margin:0
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-list-rows{
+ grid-column:2;grid-row:2;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,3vw,55px)
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-list-row{
+ display:grid;grid-template-columns:30px minmax(0,1fr);gap:11px;padding:25px 0 24px;border-color:#bfd0d7
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-list-row h3{
+ font-size:clamp(1.6rem,2.15vw,2.35rem);line-height:1.05
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-list-row p{font-size:clamp(.94rem,1vw,1rem);line-height:1.8}
+/* Documentary image already supplied by CR, relocated after the first chapter. */
+body.cr-pilot-dryer .cr-docu-media{background:#102936;padding:clamp(66px,7.5vw,118px) var(--edge)}
+body.cr-pilot-dryer .cr-docu-media-inner{
+ grid-template-columns:minmax(280px,.69fr) minmax(0,1.31fr);gap:clamp(38px,6vw,110px)
+}
+body.cr-pilot-dryer .cr-docu-media h2{
+ font-size:clamp(3.4rem,5.1vw,6rem);max-width:500px;line-height:.92
+}
+body.cr-pilot-dryer .cr-docu-media p{color:#e2eff3;line-height:1.85;max-width:51ch}
+body.cr-pilot-dryer .cr-docu-media img{
+ aspect-ratio:1.45;min-height:330px;object-fit:cover;object-position:center;
+ background:#193949;filter:saturate(.89);display:block;width:100%
+}
+/* 02 — topic introduction on pale blue, three services as a readable horizontal rhythm. */
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis{
+ background:#e7f1f3;padding-block:clamp(92px,9vw,140px)
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-chapter-heading{
+ grid-template-columns:minmax(210px,.31fr) 1fr;gap:clamp(35px,6vw,100px);margin-bottom:45px
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-chapter-heading h2{
+ max-width:900px;font-size:clamp(3.8rem,5.55vw,6.4rem);line-height:.94
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-chapter-intro{
+ margin:0 0 50px;grid-template-columns:minmax(210px,.31fr) 1fr;gap:clamp(35px,6vw,100px)
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-chapter-intro p{
+ font-size:clamp(1.03rem,1.28vw,1.2rem);line-height:1.9;color:#223c49;max-width:88ch
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-list-rows:not(.cr-rows--narrative){
+ grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(22px,3vw,58px)
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-list-row{
+ border-color:#aec7cf;padding-top:29px
+}
+body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-list-row h3{
+ font-size:clamp(1.95rem,2.5vw,2.85rem)
+}
+/* Gallery: retained original source photos in an integrated two-column editorial feature.
+   Its first original image is already displayed in the documentary block above. */
+body.cr-pilot-dryer .cr-service-media{padding-block:clamp(70px,7.5vw,120px);background:#142c3a}
+body.cr-pilot-dryer .cr-service-media .cr-media-layout{
+ grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);gap:clamp(32px,6vw,105px);max-width:1420px
+}
+body.cr-pilot-dryer .cr-service-media .cr-media-intro{padding:0}
+body.cr-pilot-dryer .cr-service-media .cr-media-intro h2{font-size:clamp(3.9rem,5.8vw,6.2rem);max-width:510px}
+body.cr-pilot-dryer .cr-service-media .cr-media-intro p{color:#dae9ef;max-width:45ch}
+body.cr-pilot-dryer .cr-service-media .cr-media-figure:first-of-type{display:none}
+body.cr-pilot-dryer .cr-service-media .cr-media-frame,
+body.cr-pilot-dryer .cr-service-media .cr-media-figure:nth-of-type(2) .cr-media-frame{
+ aspect-ratio:1.48;min-height:300px
+}
+body.cr-pilot-dryer .cr-service-media .cr-media-figure:nth-of-type(2){transform:none}
+/* 03 — long original text remains intact, but uses high contrast and two reading columns. */
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy.cr-chapter--chapter{
+ background:#f7faf9;color:#132e3b;padding-block:clamp(90px,8.5vw,135px)
+}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-chapter-heading{margin-bottom:55px}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-chapter-heading h2{color:#102a38}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-chapter-index{
+ color:#086785;border-color:#a1bdc7
+}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-chapter-intro:before{border-color:#a1bdc7}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-chapter-intro p{
+ color:#24424f;font-size:clamp(1.05rem,1.24vw,1.19rem)
+}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-rows{
+ display:block;grid-template-columns:1fr
+}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-row,
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-rows.cr-rows--narrative .cr-list-row{
+ display:grid;grid-template-columns:42px minmax(0,1fr);gap:20px;border-color:#abc3cc;padding-block:30px
+}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-row>div,
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-rows.cr-rows--narrative .cr-list-row>div{
+ display:block;column-count:2;column-gap:clamp(30px,5.5vw,95px);max-width:100%
+}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-row h3{
+ column-span:all;color:#173b4b;max-width:none;margin:0 0 24px
+}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-row .cr-row-index{color:#066d8b}
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-row p,
+body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-rows.cr-rows--narrative .cr-list-row p{
+ color:#294552!important;font-size:clamp(.96rem,1.07vw,1.04rem);
+ line-height:1.86;display:block;grid-column:auto;max-width:73ch;
+ break-inside:avoid;margin:0 0 17px
+}
+@media(max-width:1100px){
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-wrap{
+  grid-template-columns:minmax(200px,.58fr) minmax(0,1.42fr);column-gap:40px
+ }
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-list-rows{grid-template-columns:1fr}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-list-rows:not(.cr-rows--narrative){grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:820px){
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-wrap{grid-template-columns:1fr}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-heading{grid-row:auto;grid-column:1;margin:0 0 30px}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-heading h2{font-size:clamp(3.8rem,10vw,5.8rem);margin-top:22px}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-intro{grid-row:auto;grid-column:1}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-list-rows{grid-row:auto;grid-column:1;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.cr-pilot-dryer .cr-docu-media-inner{grid-template-columns:1fr}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-chapter-heading,
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-chapter-intro{grid-template-columns:1fr;gap:24px}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-chapter-intro:before{display:none}
+ body.cr-pilot-dryer .cr-service-media .cr-media-layout{grid-template-columns:1fr;gap:30px}
+}
+@media(max-width:600px){
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-list-rows{grid-template-columns:1fr}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--opening .cr-chapter-heading h2{font-size:clamp(3.5rem,13vw,5.2rem)}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-list-rows:not(.cr-rows--narrative){grid-template-columns:1fr}
+ body.cr-pilot-dryer .cr-detail-band.cr-chapter--analysis .cr-chapter-heading h2{font-size:clamp(3.25rem,11vw,4.8rem)}
+ body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-row,
+ body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-rows.cr-rows--narrative .cr-list-row{grid-template-columns:30px minmax(0,1fr);gap:12px}
+ body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-row>div,
+ body.cr-pilot-dryer .cr-detail-band.cr-detail-band--navy .cr-list-rows.cr-rows--narrative .cr-list-row>div{column-count:1}
+ body.cr-pilot-dryer .cr-docu-media img{min-height:225px}
+ body.cr-pilot-dryer .cr-service-media .cr-media-frame,
+ body.cr-pilot-dryer .cr-service-media .cr-media-figure:nth-of-type(2) .cr-media-frame{min-height:220px}
+}
+@media(prefers-reduced-motion:reduce){
+ body.cr-pilot-dryer .cr-service-media .cr-media-frame img{transform:none!important;transition:none!important}
+}
