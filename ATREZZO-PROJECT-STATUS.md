@@ -134,3 +134,10 @@ Actualizado: 2026-10-26
 - Inventario verificado de 18 rutas: **1 aplicada/aprobada; 13 candidatas pendientes de fotografía/diseño; 4 excluidas por estructura distinta**.
 - Matriz vinculante: [`ATREZZO-CR-MAPA-EFECTO-HVAC-GAS.md`](./ATREZZO-CR-MAPA-EFECTO-HVAC-GAS.md).
 - Siguiente acción: preparar las fotos full-bleed pertinentes para las candidatas, sin alterar contenido ni Home/Plumbing/Electrical.
+
+## 2026-10-28 — Lote HVAC + Gas / cinematic scroll provisional
+- **Trabajo implementado en rama:** 13 páginas adicionales (HVAC 9, Gas 4) con full-bleed provisional, zoom Service Overview → superposición ascendente de How It Works → segundo zoom. No se han modificado las otras 4 páginas de estas categorías que carecen de estructura adecuada.
+- **QA navegador real:** 65/65 casos correctos en Chromium, anchos 375, 768, 1024, 1440 y alturas de portátil. Sin overflow, sin errores JS detectados y FAQ accesibles. Evidencia: https://github.com/atrezzostudiosv-spec/cr-plumbing/actions/runs/40642966264
+- **Estado:** EN VALIDACIÓN visual, **FOTOGRAFÍAS PROVISIONALES**. No afirmar que la fase de fotos está finalizada. Algunas referencias de fondo continúan en el servidor original y requieren sustitución por WebP local.
+- **Registro específico:** [Mapa HVAC + Gas](./ATREZZO-CR-MAPA-EFECTO-HVAC-GAS.md).
+- **Siguiente acción:** revisión de usuarios y sustitución de fotografías por cada servicio, conservando texto/orden y sin tocar Home, Plumbing o Electrical.
