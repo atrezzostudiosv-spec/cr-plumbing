@@ -69,6 +69,14 @@ for(const width of widths){
  await page.waitForTimeout(120);
  const faqVisible=await page.locator('.cr-questions').isVisible();
  const faqAt=await page.locator('.cr-questions').evaluate(el=>el.getBoundingClientRect().top);
+ if(width>=821) {
+   const chain=await page.locator('[data-cr-cinematic-stage="overview"] section').evaluate(el=>{
+     const list=[];for(let n=el;n&&list.length<9;n=n.parentElement){
+       const s=getComputedStyle(n);list.push({tag:n.tagName,cls:String(n.className).slice(0,85),overflowX:s.overflowX,overflowY:s.overflowY,position:s.position,transform:s.transform,contain:s.contain,top:s.top});
+     }return list;
+   });
+   console.log('ANCESTORS '+width+' '+JSON.stringify(chain));
+ }
  const stickyExpected=width>=821;
  const valid=initial.h1===1 && initial.faq===8 && initial.stageCount===2 && initial.next.includes('cr-questions') &&
     initial.scrollWidth<=width+2 && response.status()===200 && !errors.length && faqVisible &&
