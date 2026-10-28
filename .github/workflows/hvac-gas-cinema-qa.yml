@@ -1,0 +1,36 @@
+name: HVAC Gas Cinematic Candidate QA
+on:
+  push:
+    branches: [qa/hvac-gas-cinema-20261028]
+  workflow_dispatch:
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Preview entire branch
+        run: |
+          mkdir -p "$RUNNER_TEMP/webroot"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/webroot/cr-plumbing"
+          nohup python3 -m http.server 8765 --directory "$RUNNER_TEMP/webroot" >/tmp/cr-cinema.log 2>&1 &
+          sleep 2
+          curl -fsI http://127.0.0.1:8765/cr-plumbing/gas-services/
+      - name: Check 13 pages and five viewports each
+        run: node scripts/hvac_gas_cinema_qa.mjs
+      - name: Store screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hvac-gas-cinematic-captures
+          path: qa-hvac-gas/
+          retention-days: 7
