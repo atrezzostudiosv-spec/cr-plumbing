@@ -9,6 +9,9 @@ body.cr-heating-installation .cr-cinematic-stage {
 }
 body.cr-heating-installation .cr-cinematic-stage > section { margin: 0; }
 @media (min-width: 821px) and (min-height: 750px) and (prefers-reduced-motion: no-preference) {
+  /* Avoid scroll containers at either ancestor: body overflow-x:hidden
+   * computes overflow-y:auto and prevents sticky from reaching viewport. */
+  body.cr-heating-installation { overflow-x: clip; overflow-y: visible; }
   /* overflow:hidden on main creates an unintended sticky scroll container. */
   body.cr-heating-installation main.cr-page { overflow: clip; }
   body.cr-heating-installation .cr-cinematic-stage {
