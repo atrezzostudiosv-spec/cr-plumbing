@@ -1,0 +1,37 @@
+name: Heating Cinematic Scroll QA
+on:
+  push:
+    branches:
+      - qa/heating-cinematic-scroll-20261028
+  workflow_dispatch:
+jobs:
+  browser-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Start branch preview
+        run: |
+          mkdir -p "$RUNNER_TEMP/webroot"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/webroot/cr-plumbing"
+          nohup python3 -m http.server 8765 --directory "$RUNNER_TEMP/webroot" > "$RUNNER_TEMP/server.log" 2>&1 &
+          sleep 2
+          curl -fsI http://127.0.0.1:8765/cr-plumbing/hvac/heating/new-installation/
+      - name: Test scroll, zoom and accessibility fallbacks
+        run: node scripts/heating_cinematic_qa.mjs
+      - name: Save visual evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: heating-cinematic-scroll-captures
+          path: qa-scroll-results/
+          retention-days: 7
