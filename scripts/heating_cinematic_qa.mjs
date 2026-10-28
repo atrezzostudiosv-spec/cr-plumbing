@@ -77,11 +77,11 @@ for(const width of widths){
    });
    console.log('ANCESTORS '+width+' '+JSON.stringify(chain));
  }
- const stickyExpected=width>=821;
+ const pinnedExpected=width>=821;
  const valid=initial.h1===1 && initial.faq===8 && initial.stageCount===2 && initial.next.includes('cr-questions') &&
     initial.scrollWidth<=width+2 && response.status()===200 && !errors.length && faqVisible &&
     samples.every(v=>v.at20.overflow<=2 && v.at77.overflow<=2) &&
-    (stickyExpected?samples.every(v=>v.at20.position==='sticky' && v.at77.zoom>v.at20.zoom+.005 && Math.abs(v.at20.top-v.at77.top)<4):samples.every(v=>v.at20.position!=='sticky' && v.at20.zoom===1 && v.at77.zoom===1));
+    (pinnedExpected?samples.every(v=>v.at20.position==='fixed' && v.at77.position==='fixed' && v.at77.zoom>v.at20.zoom+.005 && Math.abs(v.at20.top-v.at77.top)<4 && Math.abs(v.at20.top-83)<4):samples.every(v=>v.at20.position!=='sticky' && v.at20.zoom===1 && v.at77.zoom===1));
  if(!valid)failures++;
  console.log('RESULT '+JSON.stringify({width,http:response.status(),valid,initial,samples,faqVisible,faqAt,errors,captures}));
  if(width===1440){
@@ -89,7 +89,7 @@ for(const width of widths){
    await page.reload({waitUntil:'networkidle'});
    const reduced=await page.locator('[data-cr-cinematic-stage="overview"] section').evaluate(el=>({position:getComputedStyle(el).position,zoom:el.style.getPropertyValue('--cr-cinematic-zoom')}));
    console.log('REDUCED '+JSON.stringify(reduced));
-   if(reduced.position==='sticky'||reduced.zoom)failures++;
+   if(reduced.position==='fixed'||reduced.zoom)failures++;
  }
  await page.close();
 }
