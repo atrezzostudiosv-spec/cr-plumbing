@@ -4,7 +4,7 @@
   if (!document.body.classList.contains('cr-heating-installation')) return;
   const scenes=[...document.querySelectorAll('[data-cr-cinematic-stage]')].map(stage=>({stage,section:stage.querySelector('section')}));
   if(scenes.length!==2||scenes.some(x=>!x.section))return;
-  const media=matchMedia('(min-width:821px) and (min-height:860px) and (prefers-reduced-motion:no-preference)');
+  const media=matchMedia('(min-width:821px) and (min-height:680px) and (prefers-reduced-motion:no-preference)');
   let queued=false;
   function render(){
     queued=false;
