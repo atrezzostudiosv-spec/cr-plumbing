@@ -1,0 +1,36 @@
+name: Heating Laptop Height QA
+on:
+  push:
+    branches: [qa/heating-laptop-height-20261028]
+  workflow_dispatch:
+jobs:
+  laptop-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Preview branch
+        run: |
+          mkdir -p "$RUNNER_TEMP/webroot"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/webroot/cr-plumbing"
+          nohup python3 -m http.server 8765 --directory "$RUNNER_TEMP/webroot" >/tmp/cr-laptop.log 2>&1 &
+          sleep 2
+          curl -fsI http://127.0.0.1:8765/cr-plumbing/hvac/heating/new-installation/
+      - name: Confirm effect on laptop-height viewports
+        run: node scripts/heating_laptop_height_qa.mjs
+      - name: Save desktop capture
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cinematic-laptop-height
+          path: laptop-1440x768.jpg
+          retention-days: 7
