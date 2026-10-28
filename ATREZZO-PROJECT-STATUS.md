@@ -121,3 +121,10 @@ Actualizado: 2026-10-26
 - Blog articles absent from supplied ZIP, although separately published on current website. Article-by-article migration remains outstanding.
 - Privacy Policy original full text missing; pending legal approval.
 - New file `ATREZZO-CR-MIGRATION-AUDIT.md` maps service pages to their original filenames and documents QA blockers.
+
+## Actualización puntual — 2026-10-28 — Transición superpuesta Heating Installation
+- **Estado:** EN VALIDACIÓN visual del usuario; implementación y QA de navegador completadas.
+- **Alcance:** exclusivamente `/hvac/heating/new-installation/` — la sección How It Works sube y cubre Service Overview después del zoom del primer fondo. Al completarse la superposición, la segunda imagen efectúa su zoom antes de permitir que el scroll siga a FAQ.
+- **Preservados:** Home, textos, 8 FAQ, fotos aprobadas, CTA y el orden de capítulos. En móvil y `prefers-reduced-motion`, se mantiene el scroll vertical estático sin fijaciones.
+- **Evidencia:** https://github.com/atrezzostudiosv-spec/cr-plumbing/actions/runs/40640386744 — navegador real, 1440×900, 1440×768, 1024×700, 768×900, 375×812; pruebas de ascenso/superposición, zoom independiente, FAQ accesible, sin scroll horizontal ni errores JS.
+- **Siguiente acción:** comprobar el recorrido publicado en el navegador del usuario. No extender a otras páginas hasta su aprobación.
