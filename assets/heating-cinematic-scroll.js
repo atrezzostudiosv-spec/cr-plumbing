@@ -1,35 +1,34 @@
-/* CR Heating Installation: gentle scroll-linked photo zoom, no scroll interception.
-   Only stage background layers animate; content, links, and FAQ remain stationary. */
+/* Atrezzo / CR Plumbing: passive scroll-driven cinematic scenes.
+   The browser retains normal scrolling, links and keyboard behavior. */
 (() => {
   if (!document.body.classList.contains('cr-heating-installation')) return;
-  const stages = Array.from(document.querySelectorAll('[data-cr-cinematic-stage]'));
-  if (stages.length !== 2 || !window.requestAnimationFrame) return;
-  const supported = matchMedia('(min-width: 821px) and (min-height: 750px) and (prefers-reduced-motion: no-preference)');
-  let pending = false;
-  function update() {
-    pending = false;
-    const enabled = supported.matches;
-    for (const stage of stages) {
-      const scene = stage.querySelector('.cr-heating-full-background, .cr-process');
-      if (!scene) continue;
-      if (!enabled || getComputedStyle(scene).position !== 'sticky') {
-        scene.style.removeProperty('--cr-cinematic-zoom');
+  const scenes=[...document.querySelectorAll('[data-cr-cinematic-stage]')].map(stage=>({stage,section:stage.querySelector('section')}));
+  if(scenes.length!==2||scenes.some(x=>!x.section))return;
+  const media=matchMedia('(min-width:821px) and (min-height:860px) and (prefers-reduced-motion:no-preference)');
+  let queued=false;
+  function render(){
+    queued=false;
+    const enabled=media.matches;
+    document.body.classList.toggle('cr-cinema-ready',enabled);
+    for(const {stage,section} of scenes){
+      if(!enabled){
+        section.removeAttribute('data-cr-cinema-phase');
+        section.style.removeProperty('--cr-cinematic-zoom');
         continue;
       }
-      const start = stage.getBoundingClientRect().top + scrollY - (parseFloat(getComputedStyle(scene).top) || 83);
-      const travel = Math.max(1, stage.getBoundingClientRect().height - scene.getBoundingClientRect().height);
-      const p = Math.min(1, Math.max(0, (scrollY - start) / travel));
-      const eased = p * p * (3 - 2 * p);
-      scene.style.setProperty('--cr-cinematic-zoom', (1.012 + eased * .061).toFixed(4));
+      const head=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--head'))||83;
+      const top=stage.getBoundingClientRect().top+scrollY-head;
+      const travel=Math.max(1,stage.offsetHeight-section.offsetHeight);
+      const progress=Math.max(0,Math.min(1,(scrollY-top)/travel));
+      const phase=scrollY<top?'before':scrollY>=top+travel?'after':'pinned';
+      if(section.dataset.crCinemaPhase!==phase)section.dataset.crCinemaPhase=phase;
+      const eased=progress*progress*(3-2*progress);
+      section.style.setProperty('--cr-cinematic-zoom',(1.012+eased*.061).toFixed(4));
     }
   }
-  function schedule() {
-    if (pending) return;
-    pending = true;
-    requestAnimationFrame(update);
-  }
-  addEventListener('scroll', schedule, { passive: true });
-  addEventListener('resize', schedule, { passive: true });
-  supported.addEventListener?.('change', schedule);
+  function schedule(){if(!queued){queued=true;requestAnimationFrame(render);}}
+  addEventListener('scroll',schedule,{passive:true});
+  addEventListener('resize',schedule,{passive:true});
+  media.addEventListener?.('change',schedule);
   schedule();
 })();
