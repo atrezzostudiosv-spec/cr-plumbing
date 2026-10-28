@@ -1,105 +1,78 @@
-/* Atrezzo / CR Plumbing — Heating Installation cinematic chapter transition.
-   Progressive enhancement: no JS => normal sections, no long spacers.
-   The two photo layers zoom; text never scales. Native scroll is unrestricted. */
-body.cr-heating-installation .cr-cinematic-stage {
-  position:relative;
-  min-width:0;
-  background:#081d2a;
-}
-body.cr-heating-installation .cr-cinematic-stage > section { margin:0; }
-
+/* Heating Installation only: rising overlap between approved cinematic scenes.
+   With JavaScript disabled, mobile, or reduced motion: original document flow. */
+body.cr-heating-installation .cr-cinematic-stage {position:relative;min-width:0;background:#081d2a}
+body.cr-heating-installation .cr-cinematic-stage > section {margin:0}
 @media (min-width:821px) and (min-height:680px) and (prefers-reduced-motion:no-preference) {
-  body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage {
-    height:calc(100svh - var(--head,83px) + 52svh);
-    min-height:1100px;
-    padding:0;
-  }
-  body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--overview {z-index:1}
-  body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--process {
-    z-index:2;
-    margin-top:-25px;
-  }
-  body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage > section {
-    position:absolute;
-    top:0;
-    left:0;
-    right:0;
-    width:100%;
-    min-height:calc(100svh - var(--head,83px));
-    isolation:isolate;
-    overflow:clip;
-  }
-  body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage > section[data-cr-cinema-phase="pinned"] {
-    position:fixed;
-    top:var(--head,83px);
-    left:0;
-    right:0;
-    width:100%;
-  }
-  body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage > section[data-cr-cinema-phase="after"] {
-    position:absolute;
-    top:auto;
-    bottom:0;
-  }
-  body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--overview .cr-heating-full-background::before {
-    transform:scale(var(--cr-cinematic-zoom,1.012));
-    transform-origin:68% center;
-    will-change:transform;
-  }
-  body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process {
-    background-image:none;
-    background-color:#0b2432;
-  }
-  body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:-2;
-    background:url("/cr-plumbing/assets/images/cr-shared-how-it-works.webp") 62% center/cover no-repeat;
-    pointer-events:none;
-    transform:scale(var(--cr-cinematic-zoom,1.012));
-    transform-origin:66% center;
-    will-change:transform;
-  }
-  body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process::after {
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:-1;
-    background:linear-gradient(90deg,rgba(5,23,35,.97) 0%,rgba(5,23,35,.93) 34%,rgba(5,23,35,.78) 49%,rgba(5,23,35,.35) 72%,rgba(5,23,35,.12) 100%),
-      linear-gradient(0deg,rgba(4,20,30,.38),transparent 58%);
-    pointer-events:none;
-  }
-}
-
-/* Laptop browser windows commonly have 700–850px of usable height.
-   Compact the existing scene only in this range, without hiding content. */
-@media (min-width:821px) and (min-height:680px) and (max-height:859px) and (prefers-reduced-motion:no-preference) {
- body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage { min-height:980px; }
- body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage > section {
-   min-height:calc(100svh - var(--head,83px));
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage {
+   min-height:0;height:var(--cr-cinema-stage-height,auto);padding:0;background:transparent;
  }
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--overview {z-index:1}
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--process {
+   z-index:2;margin-top:var(--cr-cinema-overlap,0px);
+ }
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage > section {
+   position:absolute;top:0;left:0;right:0;width:100%;
+   min-height:calc(100svh - var(--head,83px));isolation:isolate;overflow:clip;
+ }
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage > section[data-cr-cinema-phase="pinned"],
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage > section[data-cr-cinema-phase="entering"] {
+   position:fixed;top:var(--head,83px);left:0;right:0;width:100%;
+ }
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage > section[data-cr-cinema-phase="after"] {
+   position:absolute;top:auto;bottom:0;
+ }
+ /* Until the first zoom finishes, the next chapter must remain invisible. */
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--process > section[data-cr-cinema-phase="before"] {
+   visibility:hidden;pointer-events:none;
+ }
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--process > section[data-cr-cinema-phase="entering"] {
+   visibility:visible;
+   transform:translate3d(0,var(--cr-cinema-enter-y,100%),0);
+   will-change:transform;
+ }
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--process > section[data-cr-cinema-phase="pinned"],
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--process > section[data-cr-cinema-phase="after"] {
+   visibility:visible;transform:none;
+ }
+ body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--overview .cr-heating-full-background::before {
+   transform:scale(var(--cr-cinematic-zoom,1.012));
+   transform-origin:68% center;will-change:transform;
+ }
+ body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process {
+   background-image:none;background-color:#0b2432;
+ }
+ body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process::before {
+   content:"";position:absolute;inset:0;z-index:-2;
+   background:url("/cr-plumbing/assets/images/cr-shared-how-it-works.webp") 62% center/cover no-repeat;
+   pointer-events:none;
+   transform:scale(var(--cr-cinematic-zoom,1.012));
+   transform-origin:66% center;will-change:transform;
+ }
+ body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process::after {
+   content:"";position:absolute;inset:0;z-index:-1;
+   background:linear-gradient(90deg,rgba(5,23,35,.97) 0%,rgba(5,23,35,.93) 34%,rgba(5,23,35,.78) 49%,rgba(5,23,35,.35) 72%,rgba(5,23,35,.12) 100%),
+      linear-gradient(0deg,rgba(4,20,30,.38),transparent 58%);
+   pointer-events:none;
+ }
+}
+@media (min-width:821px) and (min-height:680px) and (max-height:859px) and (prefers-reduced-motion:no-preference) {
  body.cr-heating-installation.cr-cinema-ready .cr-cinematic-stage--overview .cr-docu-media {
    padding-block:clamp(44px,6.5svh,65px);
  }
  body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process {
-   min-height:calc(100svh - var(--head,83px));
-   padding-block:clamp(35px,5svh,60px);
+   min-height:calc(100svh - var(--head,83px));padding-block:clamp(35px,5svh,60px);
  }
  body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process h2 {
-   font-size:clamp(3.1rem,5.2vw,4.8rem);
-   margin-bottom:18px;
+   font-size:clamp(3.1rem,5.2vw,4.8rem);margin-bottom:18px;
  }
  body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process .cr-process-item {
    padding-block:clamp(9px,1.4svh,16px);
  }
  body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process .cr-process-item b {
-   font-size:clamp(2.3rem,3.1vw,3.1rem);
-   margin-bottom:0;
+   font-size:clamp(2.3rem,3.1vw,3.1rem);margin-bottom:0;
  }
  body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process .cr-process-item h3 {
-   font-size:clamp(1.45rem,2.1vw,2.05rem);
-   margin-bottom:6px;
+   font-size:clamp(1.45rem,2.1vw,2.05rem);margin-bottom:6px;
  }
  body.cr-detail.cr-heating-installation.cr-cinema-ready .cr-page .cr-cinematic-stage--process .cr-process .cr-process-item p {
    line-height:1.55;
