@@ -1,0 +1,86 @@
+/* CR Plumbing — approved Heating Installation service overview, full-bleed photo.
+   Only this page's service overview is affected. The WebP is illustrative. */
+body.cr-heating-installation .cr-docu-media.cr-heating-full-background {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  display: flex;
+  align-items: center;
+  min-height: clamp(610px, 63vw, 825px);
+  background: #091e2b;
+  padding: clamp(85px, 10vw, 145px) var(--edge);
+  color: #ffffff;
+}
+body.cr-heating-installation .cr-docu-media.cr-heating-full-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: url("/cr-plumbing/assets/images/hvac-heating-installation-furnace-background.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+body.cr-heating-installation .cr-docu-media.cr-heating-full-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg,
+    rgba(5, 19, 29, .95) 0%,
+    rgba(5, 19, 29, .81) 31%,
+    rgba(5, 19, 29, .48) 54%,
+    rgba(5, 19, 29, .13) 76%,
+    rgba(5, 19, 29, .05) 100%);
+}
+body.cr-heating-installation .cr-docu-media.cr-heating-full-background .cr-docu-media-inner {
+  width: 100%;
+  max-width: 1450px;
+  margin: 0 auto;
+  display: block;
+}
+body.cr-heating-installation .cr-docu-media.cr-heating-full-background .cr-docu-media-inner > div {
+  max-width: 730px;
+}
+body.cr-heating-installation .cr-docu-media.cr-heating-full-background h2 {
+  color: #fff;
+  max-width: 13ch;
+  margin: 0 0 28px;
+  text-wrap: balance;
+}
+body.cr-heating-installation .cr-docu-media.cr-heating-full-background p {
+  color: #e0e8ec;
+  max-width: 65ch;
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.85;
+}
+@media (max-width: 820px) {
+  body.cr-heating-installation .cr-docu-media.cr-heating-full-background {
+    min-height: 650px;
+    padding: 85px var(--edge);
+  }
+  body.cr-heating-installation .cr-docu-media.cr-heating-full-background::before {
+    background-position: 60% center;
+  }
+  body.cr-heating-installation .cr-docu-media.cr-heating-full-background::after {
+    background: linear-gradient(90deg,
+      rgba(5, 19, 29, .94) 0%, rgba(5, 19, 29, .84) 54%,
+      rgba(5, 19, 29, .62) 100%);
+  }
+}
+@media (max-width: 550px) {
+  body.cr-heating-installation .cr-docu-media.cr-heating-full-background {
+    min-height: 0;
+    padding: 85px var(--edge) 95px;
+  }
+  body.cr-heating-installation .cr-docu-media.cr-heating-full-background h2 {
+    font-size: clamp(2.6rem, 11vw, 4rem);
+    max-width: 12ch;
+  }
+  body.cr-heating-installation .cr-docu-media.cr-heating-full-background::before {
+    background-position: 64% center;
+  }
+  body.cr-heating-installation .cr-docu-media.cr-heating-full-background::after {
+    background: rgba(5, 19, 29, .84);
+  }
+}
