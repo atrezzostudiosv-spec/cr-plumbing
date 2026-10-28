@@ -1,0 +1,36 @@
+name: Heating Overlap Scroll QA
+on:
+  push:
+    branches: [qa/heating-overlap-reveal-20261028]
+  workflow_dispatch:
+jobs:
+  overlay-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Chromium
+        run: |
+          npm install --no-save playwright@1.56.1
+          npx playwright install --with-deps chromium
+      - name: Run branch-only preview
+        run: |
+          mkdir -p "$RUNNER_TEMP/webroot"
+          ln -s "$GITHUB_WORKSPACE" "$RUNNER_TEMP/webroot/cr-plumbing"
+          nohup python3 -m http.server 8765 --directory "$RUNNER_TEMP/webroot" > "$RUNNER_TEMP/heating-preview.log" 2>&1 &
+          sleep 2
+          curl -fsI http://127.0.0.1:8765/cr-plumbing/hvac/heating/new-installation/
+      - name: Test overlap, zoom and native scroll
+        run: node scripts/heating_overlap_qa.mjs
+      - name: Keep visual captures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: heating-overlap-captures
+          path: qa-overlay-output/
+          retention-days: 7
