@@ -128,3 +128,9 @@ Actualizado: 2026-10-26
 - **Preservados:** Home, textos, 8 FAQ, fotos aprobadas, CTA y el orden de capítulos. En móvil y `prefers-reduced-motion`, se mantiene el scroll vertical estático sin fijaciones.
 - **Evidencia:** https://github.com/atrezzostudiosv-spec/cr-plumbing/actions/runs/40640386744 — navegador real, 1440×900, 1440×768, 1024×700, 768×900, 375×812; pruebas de ascenso/superposición, zoom independiente, FAQ accesible, sin scroll horizontal ni errores JS.
 - **Siguiente acción:** comprobar el recorrido publicado en el navegador del usuario. No extender a otras páginas hasta su aprobación.
+
+## 2026-10-28 — Restricción aprobada de cinematic scroll por servicio
+- El efecto de superposición Overview → How It Works queda **autorizado exclusivamente en HVAC y Gas**, y solo si la página cumple las condiciones estructurales, fotográficas y responsive. **No se aplica masivamente**.
+- Inventario verificado de 18 rutas: **1 aplicada/aprobada; 13 candidatas pendientes de fotografía/diseño; 4 excluidas por estructura distinta**.
+- Matriz vinculante: [`ATREZZO-CR-MAPA-EFECTO-HVAC-GAS.md`](./ATREZZO-CR-MAPA-EFECTO-HVAC-GAS.md).
+- Siguiente acción: preparar las fotos full-bleed pertinentes para las candidatas, sin alterar contenido ni Home/Plumbing/Electrical.
