@@ -39,11 +39,11 @@ for(const width of widths){
    const positions=[0.20,0.77].map(t=>Math.max(0,metrics.start-83+travel*t));
    let sample=[];
    for(let j=0;j<positions.length;j++){
-     await page.evaluate(y=>scrollTo(0,y),positions[j]);
-     await page.waitForTimeout(180);
+     await page.evaluate(y=>scrollTo({top:y,behavior:'instant'}),positions[j]);
+     await page.waitForTimeout(300);
      const state=await stage.evaluate(el=>{
        const sec=el.querySelector('section');
-       return {top:Math.round(sec.getBoundingClientRect().top),
+       return {scrollY:Math.round(scrollY),top:Math.round(sec.getBoundingClientRect().top),
         zoom:Number(sec.style.getPropertyValue('--cr-cinematic-zoom'))||1,
         position:getComputedStyle(sec).position,
         bg:getComputedStyle(sec,'::before').backgroundImage,
