@@ -13,7 +13,7 @@ body.cr-heating-installation .cr-cinematic-stage > section { margin: 0; }
    * computes overflow-y:auto and prevents sticky from reaching viewport. */
   body.cr-heating-installation { overflow-x: clip; overflow-y: visible; }
   /* overflow:hidden on main creates an unintended sticky scroll container. */
-  body.cr-heating-installation main.cr-page { overflow: clip; }
+  body.cr-heating-installation main.cr-page { overflow: visible; }
   body.cr-heating-installation .cr-cinematic-stage {
     padding-bottom: 46svh;
   }
