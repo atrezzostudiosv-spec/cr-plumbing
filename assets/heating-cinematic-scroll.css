@@ -27,7 +27,8 @@ body.cr-heating-installation .cr-cinematic-stage > section { margin: 0; }
     position: sticky;
     top: var(--head, 83px);
     min-height: calc(100svh - var(--head, 83px));
-    overflow: clip;
+    overflow: visible;
+    clip-path: inset(0);
     isolation: isolate;
   }
   body.cr-heating-installation .cr-cinematic-stage--overview .cr-heating-full-background::before {
