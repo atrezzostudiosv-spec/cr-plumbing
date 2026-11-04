@@ -1,4 +1,4 @@
-/* Atrezzo — accessible service request popup. Works without a backend. */
+/* Atrezzo — accessible service request popup. Shared request dialog with a local preview step. */
 (() => {
   const rootPath = '/cr-plumbing/';
   const triggers = [
@@ -26,7 +26,7 @@
       '<button class="cr-modal__close" type="button" aria-label="Close request form">×</button>',
       '<div class="cr-modal__form-heading">',
         '<span class="cr-modal__eyebrow">SERVICE REQUEST</span>',
-        '<p id="cr-modal-description">Enter your details to prepare a request to share with CR.</p>',
+        '<p id="cr-modal-description">Tell us what you need and review your request details.</p>',
       '</div>',
       '<form class="cr-modal__form" id="cr-modal-form">',
         '<div class="cr-modal__field cr-modal__field--full"><label for="cr-request-service">Requested service *</label><input id="cr-request-service" name="service" maxlength="160" required></div>',
@@ -36,8 +36,9 @@
         '<div class="cr-modal__field"><label for="cr-request-email">Email (optional)</label><input id="cr-request-email" name="email" type="email" autocomplete="email" maxlength="160"></div>',
         '<div class="cr-modal__field cr-modal__field--full"><label for="cr-request-message">Briefly describe the issue</label><textarea id="cr-request-message" name="message" rows="3" maxlength="1200" placeholder="Tell us about the issue…"></textarea></div>',
         '<div class="cr-modal__field cr-modal__field--full cr-modal__submit-area">',
-          '<p class="cr-modal__disclosure">This form prepares a request on your device. It does not send information or book an appointment automatically.</p>',
-          '<button class="cr-modal__submit" type="submit">COPY REQUEST DETAILS <span>↗</span></button>',
+          '<label class="cr-form-trap" aria-hidden="true">Leave this field empty<input name="_honey" tabindex="-1" autocomplete="off"></label>',
+          '<p class="cr-modal__disclosure">Review your request before copying it. Online delivery will be enabled after design approval.</p>',
+          '<button class="cr-modal__submit" type="button" data-cr-review>REVIEW REQUEST <span>↗</span></button>',
           '<div class="cr-modal__result" id="cr-modal-result" tabindex="-1" role="status" aria-live="polite" hidden></div>',
         '</div>',
       '</form>',
@@ -46,7 +47,7 @@
   ].join('');
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = rootPath + 'assets/request-modal.css';
+  stylesheet.href = rootPath + 'assets/request-modal.css?v=20261104-preview-02';
   document.head.appendChild(stylesheet);
   document.body.appendChild(modal);
 
@@ -58,6 +59,7 @@
   let opener, priorOverflow = '';
 
   function detectService() {
+    if(document.body.dataset.requestService)return document.body.dataset.requestService;
     const heroTitle = document.querySelector('.cr-page-hero h1, .inner-hero h1');
     return heroTitle ? heroTitle.textContent.replace(/\s+/g,' ').trim() : '';
   }
@@ -68,6 +70,7 @@
     feedback.textContent = '';
     form.reset();
     service.value = detectService();
+    modal.querySelector('#cr-request-city').value=document.body.dataset.city||(new URLSearchParams(location.search).get('city')||'').slice(0,90);
     service.placeholder = service.value ? '' : 'e.g. AC repair, plumbing, electrical';
     modal.hidden = false;
     document.body.style.overflow = 'hidden';
@@ -97,22 +100,5 @@
     if(!first)return;
     if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
     else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
-  });
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-    const data = Array.from(new FormData(form).entries()).filter(([,value])=>String(value).trim());
-    const summary = ['CR Plumbing, Air & Electric — Service request',...data.map(([key,value])=>key.toUpperCase()+': '+value)].join('\n');
-    feedback.hidden = false;
-    try {
-      if(!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Clipboard unavailable');
-      await navigator.clipboard.writeText(summary);
-      feedback.textContent = 'Request details copied. Call (940) 370-5663 to share them with CR. No request was submitted online.';
-    } catch {
-      feedback.textContent = 'Copy these details, then call (940) 370-5663. Nothing was submitted online.';
-      const text = document.createElement('pre');
-      text.textContent = summary;
-      feedback.appendChild(text);
-    }
-    feedback.focus();
   });
 })();
