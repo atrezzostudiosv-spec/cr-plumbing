@@ -158,3 +158,16 @@ Actualizado: 2026-10-26
 - QA: 84 comprobaciones de las 42 rutas en móvil/escritorio correctas y control estático sin errores. [Alcance y evidencia](./ATREZZO-CR-LOCALITIES-QA-2026-11-04.md).
 - **Decisión posterior del usuario:** los formularios quedan en revisión/copia local; el envío real se conectará al aprobarse el diseño. No hay email ni reserva confirmada por la interfaz.
 - Home y animaciones aprobadas conservados; sus cargadores compartidos reciben una nueva versión de caché.
+
+## 2026-11-04 — Aprobación de la muestra y aclaración del envío
+- El usuario aprueba la versión de muestra publicada. Esta aprobación no equivale a la aprobación del cliente final, que sigue pendiente.
+- El usuario confirma expresamente que no se enviarán correos desde los formularios hasta que el cliente apruebe el diseño.
+- Se mantiene el funcionamiento actual: validación, revisión y copia local de solicitudes, sin envío ni reserva confirmada. No se requiere crear cuentas ni facilitar claves en esta fase.
+- Próximo paso: presentar la muestra al cliente y recoger sus ajustes. Tras su aprobación, completar fotografías y datos definitivos y conectar el proveedor de formularios; acreditar la recepción antes de dar el envío por terminado.
+
+## 2026-11-04 — SEO, favicon e imagen social
+- Configurados metadatos estáticos en 129 rutas: títulos/descripciones únicos en las 126 páginas de contenido, canonical, Open Graph, Twitter Card y datos estructurados de sitio/página/breadcrumbs.
+- Incorporados favicon multiformato a partir del logo original, iconos para móviles e imagen social de 1200 × 630 con la fotografía familiar de la muestra.
+- Configuración central de URL e indexación en `assets/seo-config.json`; el sitio de muestra continúa noindex hasta la aprobación del cliente y el lanzamiento. El sitemap solo incluye páginas al habilitar la indexación en el dominio definitivo.
+- Generadores de localidades y CI integrados con comprobación SEO. Control estático: 129 rutas, 936 FAQ, sin errores ni avisos. Cuerpo HTML de las 129 rutas conservado.
+- Formularios de revisión/copia local conservados, sin correo. [Alcance, fuentes y validación](./ATREZZO-CR-SEO-2026-11-04.md).

@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 
 ROOT=Path(__file__).resolve().parents[1]
 BASE='/cr-plumbing/'
-subprocess.run([sys.executable,str(ROOT/'scripts/build_argyle.py')],check=True)
+subprocess.run([sys.executable,str(ROOT/'scripts/build_argyle.py'),'--skip-seo'],check=True)
 records=json.loads((ROOT/'assets/local-areas-content.json').read_text())
 template=(ROOT/'service-areas/argyle-tx/index.html').read_text()
 known={r['city']:r['slug'] for r in records}
@@ -68,3 +68,4 @@ for p in s.select('.cr-area-intro p'):
     p.string='Choose your community to explore local services and answers. For Bedford, McKinney and Sanger, contact the team to confirm availability.'
 path.write_text(str(s))
 print('Built',len(records),'source-backed local pages;',sum(len(r['faqs']) for r in records),'source FAQs')
+subprocess.run([sys.executable,str(ROOT/'scripts/build_seo.py')],check=True)

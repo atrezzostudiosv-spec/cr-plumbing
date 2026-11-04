@@ -48,3 +48,17 @@ Revisa el informe [ATREZZO-CR-MIGRATION-AUDIT.md](./ATREZZO-CR-MIGRATION-AUDIT.m
 **Límites:** artículos individuales del Blog fuera del ZIP; política legal no acreditada; datos de plantilla de formularios no se transmiten a un servidor; fotos alojadas en el dominio WordPress original; vigencia de equipo, servicios comerciales y vacantes pendiente de confirmación.
 
 Se incluye `noindex,nofollow` en páginas de la presentación para impedir que el sitio en Pages se presente en buscadores como sede oficial mientras no se autorice la publicación.
+# SEO y presentación social
+
+La configuración está en `assets/seo-config.json`. La muestra conserva `indexing_enabled: false`; la aprobación del cliente está pendiente.
+
+Después de modificar metadatos o regenerar páginas, ejecutar:
+
+```sh
+python3 scripts/build_seo.py
+python3 scripts/build_seo.py --check
+python3 scripts/check_seo.py
+python3 scripts/atrezzo_static_qa.py --fail-critical
+```
+
+Los generadores de Argyle y localidades aplican SEO automáticamente. Para el lanzamiento, confirmar primero el dominio y adaptar el prefijo de los enlaces internos si cambia; después configurar `base_url` e indexación y regenerar. [Alcance y comprobaciones](ATREZZO-CR-SEO-2026-11-04.md).
