@@ -68,4 +68,5 @@ for p in s.select('.cr-area-intro p'):
     p.string='Choose your community to explore local services and answers. For Bedford, McKinney and Sanger, contact the team to confirm availability.'
 path.write_text(str(s))
 print('Built',len(records),'source-backed local pages;',sum(len(r['faqs']) for r in records),'source FAQs')
+subprocess.run([sys.executable,str(ROOT/'scripts/build_footer.py')],check=True)
 subprocess.run([sys.executable,str(ROOT/'scripts/build_seo.py')],check=True)
