@@ -58,7 +58,7 @@
   let opener, priorOverflow = '';
 
   function detectService() {
-    const heroTitle = document.querySelector('.inner-hero h1');
+    const heroTitle = document.querySelector('.cr-page-hero h1, .inner-hero h1');
     return heroTitle ? heroTitle.textContent.replace(/\s+/g,' ').trim() : '';
   }
   function openDialog(trigger) {

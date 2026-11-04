@@ -109,7 +109,9 @@
   // Group dense content by its structure. The text nodes, order, headings and
   // paragraphs remain identical; we never truncate or collapse informational copy.
   sections.forEach((section,i)=>{
-    section.id='cr-chapter-'+(i+1);
+    // Heading IDs remain the aria-labelledby targets; section anchors use
+    // a separate namespace so the reading guide cannot duplicate those IDs.
+    section.id='cr-section-'+(i+1);
     const title=section.querySelector('.cr-chapter-heading h2')?.textContent||'';
     const rows=section.querySelectorAll('.cr-list-row');
     const hasLongCopy=[...rows].some(x=>x.textContent.length>320);

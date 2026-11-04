@@ -57,7 +57,20 @@
     pane.addEventListener('click',e=>{if(e.target.closest('a'))closePanel()});
   });
   document.addEventListener('pointerdown',e=>{if(expanded&&!expanded.contains(e.target))closePanel()});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&expanded){e.preventDefault();closePanel(true)}});
+  document.addEventListener('keydown',e=>{
+    if(e.key!=='Escape'||e.defaultPrevented)return;
+    // Let the request dialog handle Escape without closing navigation behind it.
+    if(document.querySelector('.cr-modal:not([hidden])'))return;
+    if(mobile.classList.contains('open')){
+      e.preventDefault();
+      // Reuse the toggle's existing handler to reset the icon and ARIA state.
+      toggle.click();
+      toggle.focus();
+    }else if(expanded){
+      e.preventDefault();
+      closePanel(true);
+    }
+  });
   window.addEventListener('resize',()=>{if(expanded&&innerWidth<=1380)closePanel()},{passive:true});
   /* Mobile is a natural vertical accordion, never a horizontal scroller. */
   function mobileSub(s,isCompany=false){

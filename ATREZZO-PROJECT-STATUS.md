@@ -141,3 +141,12 @@ Actualizado: 2026-10-26
 - **Estado:** EN VALIDACIÓN visual, **FOTOGRAFÍAS PROVISIONALES**. No afirmar que la fase de fotos está finalizada. Algunas referencias de fondo continúan en el servidor original y requieren sustitución por WebP local.
 - **Registro específico:** [Mapa HVAC + Gas](./ATREZZO-CR-MAPA-EFECTO-HVAC-GAS.md).
 - **Siguiente acción:** revisión de usuarios y sustitución de fotografías por cada servicio, conservando texto/orden y sin tocar Home, Plumbing o Electrical.
+
+## 2026-11-04 — Correcciones compartidas de navegación, accesibilidad y formulario
+- Se separan los IDs de secciones (`cr-section-N`) y títulos (`cr-chapter-N`) para corregir las colisiones de JavaScript y las relaciones `aria-labelledby` en 20 rutas.
+- Escape cierra el menú móvil y restaura su icono, ARIA y foco. El formulario modal conserva prioridad al pulsar Escape.
+- El formulario detecta el servicio de `.cr-page-hero h1`, conservando el selector anterior como fallback y el Home sin servicio prefijado.
+- **QA local en Chrome:** 40/40 comprobaciones de las 20 rutas en móvil/escritorio, 6/6 de menú y 8/8 de formulario correctas; también cierre desktop y Escape con capas. Control estático: 0 errores, 544 FAQ preservadas.
+- HTML, CSS, fotografías y motores cinematográficos conservados. Formularios siguen sin backend.
+- [Alcance, rutas y validación](./ATREZZO-CR-SHARED-FIXES-QA-2026-11-04.md). Estado: corregido y probado localmente; la publicación de Pages depende de integrar la rama.
+- Siguiente paso del trabajo de localidades: piloto Argyle, usando su fuente en `AREAS`, antes de extenderlo a las otras 41 páginas disponibles.
