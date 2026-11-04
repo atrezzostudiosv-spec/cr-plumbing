@@ -35,3 +35,9 @@
 @media(max-width:800px){.cr-modal{padding:12px}.cr-modal__panel{grid-template-columns:1fr;max-height:calc(100svh - 24px)}.cr-modal__intro{min-height:0;padding:21px 24px;gap:10px}.cr-modal__intro-center h2{font-size:2.55rem;margin:9px 0}.cr-modal__intro-center h2 br{display:none}.cr-modal__intro-center p{font-size:.74rem;max-width:none;margin:0}.cr-modal__phone{display:none}.cr-modal__main{padding:26px 24px 28px}.cr-modal__close{top:12px;right:15px}.cr-modal__form-heading{margin-bottom:18px}.cr-modal__form{gap:12px}}
 @media(max-width:480px){.cr-modal__form{grid-template-columns:1fr}.cr-modal__field--full{grid-column:auto}.cr-modal__intro{padding:17px 19px}.cr-modal__main{padding:24px 19px 28px}.cr-modal__small{padding-right:39px}.cr-modal__intro-center h2{font-size:2.5rem}}
 @media(prefers-reduced-motion:reduce){.cr-modal{backdrop-filter:none}}
+
+.cr-form-trap{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.cr-modal__submit:disabled,.service-form button:disabled{opacity:.65;cursor:wait}
+.cr-modal__result[data-state="error"],.form-feedback[data-state="error"]{border-left:3px solid #ac4e20;background:#fff0e6;color:#742d16}
+.form-feedback pre{white-space:pre-wrap;overflow-wrap:anywhere;font:500 .82rem/1.7 Manrope,Arial,sans-serif}
+.cr-request-copy{border:1px solid #0a6e91;background:#fff;color:#075a78;padding:11px 16px;font:800 .75rem/1.4 Manrope,Arial,sans-serif;cursor:pointer;margin-top:10px}

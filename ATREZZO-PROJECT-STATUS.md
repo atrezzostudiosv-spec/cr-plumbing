@@ -150,3 +150,11 @@ Actualizado: 2026-10-26
 - HTML, CSS, fotografías y motores cinematográficos conservados. Formularios siguen sin backend.
 - [Alcance, rutas y validación](./ATREZZO-CR-SHARED-FIXES-QA-2026-11-04.md). Estado: corregido y probado localmente; la publicación de Pages depende de integrar la rama.
 - Siguiente paso del trabajo de localidades: piloto Argyle, usando su fuente en `AREAS`, antes de extenderlo a las otras 41 páginas disponibles.
+
+## 2026-11-04 — Argyle y las 42 localidades con fuente
+- PR #8 integrada en `main`. Se completa el piloto Argyle y se publican las 42 páginas locales con fuente, sus 392 FAQ y enlaces desde Service Areas.
+- El conjunto contiene 129 rutas HTML y 936 FAQ. Bedford, McKinney y Sanger abren una consulta de disponibilidad con ciudad seleccionada.
+- Reutilizadas las fotografías de presentación disponibles y el patrón C01 de Cards, adaptado a CR. Las fotografías definitivas se completarán después de la aprobación del cliente.
+- QA: 84 comprobaciones de las 42 rutas en móvil/escritorio correctas y control estático sin errores. [Alcance y evidencia](./ATREZZO-CR-LOCALITIES-QA-2026-11-04.md).
+- **Decisión posterior del usuario:** los formularios quedan en revisión/copia local; el envío real se conectará al aprobarse el diseño. No hay email ni reserva confirmada por la interfaz.
+- Home y animaciones aprobadas conservados; sus cargadores compartidos reciben una nueva versión de caché.

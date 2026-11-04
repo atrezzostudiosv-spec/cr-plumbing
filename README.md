@@ -4,6 +4,8 @@ Rediseño visual basado en los recursos y el contenido del sitio original [crplu
 
 ## Estado actual
 
+- **Actualización 4-11-2026:** 42 páginas locales navegables, 392 FAQ locales y 129 rutas en total. Formularios con revisión/copia local; envío real diferido por indicación del usuario hasta aprobación del diseño. Ver [localidades y QA](./ATREZZO-CR-LOCALITIES-QA-2026-11-04.md).
+
 - **Home aprobado visualmente por el usuario. No modificar sin solicitud específica.**
 - Cuatro capítulos fotográficos (Plumbing, HVAC, Electrical y Gas), narrativa vertical y zoom suave al desplazarse.
 - Desktop y móvil con composiciones diferenciadas; se respetan las preferencias de movimiento reducido.
