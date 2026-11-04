@@ -171,3 +171,9 @@ Actualizado: 2026-10-26
 - Configuración central de URL e indexación en `assets/seo-config.json`; el sitio de muestra continúa noindex hasta la aprobación del cliente y el lanzamiento. El sitemap solo incluye páginas al habilitar la indexación en el dominio definitivo.
 - Generadores de localidades y CI integrados con comprobación SEO. Control estático: 129 rutas, 936 FAQ, sin errores ni avisos. Cuerpo HTML de las 129 rutas conservado.
 - Formularios de revisión/copia local conservados, sin correo. [Alcance, fuentes y validación](./ATREZZO-CR-SEO-2026-11-04.md).
+
+## 2026-11-04 — Footer común en todo el sitio
+- Componente estático único en las 126 páginas de contenido: marca, teléfono, servicios, compañía, recursos, privacidad y regreso arriba. Todos los destinos anteriores conservados.
+- Fuente `partials/site-footer.html`, estilos compartidos y generador con comprobación CI; los generadores de localidades lo aplican automáticamente.
+- 40 comprobaciones de navegador en 10 tipos de página y cuatro anchos: mismo DOM, contenido, estilos e iconos, sin desbordamientos. SEO y 936 FAQ preservados.
+- Formularios sin envío y muestra noindex conservados. [Detalle y mantenimiento](./ATREZZO-CR-FOOTER-2026-11-04.md).

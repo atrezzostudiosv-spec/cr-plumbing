@@ -11,7 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 BASE = '/cr-plumbing/'
 source = json.loads((ROOT/'assets/argyle-content.json').read_text())
 shell = BeautifulSoup((ROOT/'service-areas/index.html').read_text(), 'html.parser')
-header, footer = str(shell.header), str(shell.footer)
+header = str(shell.header)
+footer = (ROOT/'partials/site-footer.html').read_text().strip()
 trades = [
  ('Plumbing','Water heaters, drains, sewer lines, fixtures, filtration and the pipes that connect your home.','plumbing-services/','cr-water-heaters-hero.webp','Illustrative water heater service scene'),
  ('Heating & cooling','AC repair, heating, mini-splits, ventilation and indoor air quality for year-round comfort.','hvac/','hvac-heating-installation-furnace-background.webp','Illustrative residential heating equipment'),
@@ -41,4 +42,5 @@ html=f'''<!doctype html>
 dest=ROOT/'service-areas/argyle-tx/index.html';dest.parent.mkdir(exist_ok=True);dest.write_text(html)
 print('Built',dest.relative_to(ROOT),'with',len(source['faqs']),'source FAQs')
 if '--skip-seo' not in sys.argv:
+    subprocess.run([sys.executable, str(ROOT/'scripts/build_footer.py')], check=True)
     subprocess.run([sys.executable, str(ROOT/'scripts/build_seo.py')], check=True)
