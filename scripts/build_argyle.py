@@ -3,6 +3,8 @@
 from pathlib import Path
 from html import escape as e
 import json
+import subprocess
+import sys
 from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -38,3 +40,5 @@ html=f'''<!doctype html>
 </main>{footer}<script src="{BASE}assets/local-service-index.js" defer></script><script src="{BASE}assets/site.js?v=20261104-preview-02" defer></script></body></html>'''
 dest=ROOT/'service-areas/argyle-tx/index.html';dest.parent.mkdir(exist_ok=True);dest.write_text(html)
 print('Built',dest.relative_to(ROOT),'with',len(source['faqs']),'source FAQs')
+if '--skip-seo' not in sys.argv:
+    subprocess.run([sys.executable, str(ROOT/'scripts/build_seo.py')], check=True)
