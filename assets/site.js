@@ -3,7 +3,7 @@
 /* Shared modal loader: once, on all Home and internal pages */
 if (!document.querySelector('script[data-cr-request-modal]')) {
   const requestModule = document.createElement('script');
-  requestModule.src = '/cr-plumbing/assets/request-modal.js';
+  requestModule.src = '/cr-plumbing/assets/request-modal.js?v=20261104-shared-fixes';
   requestModule.dataset.crRequestModal = 'true';
   document.body.appendChild(requestModule);
 }
@@ -11,7 +11,7 @@ if (!document.querySelector('script[data-cr-request-modal]')) {
 /* Atrezzo internal-page experience, never load on approved Home. */
 if(document.body?.classList.contains('cr-detail')){
   if(!document.querySelector('link[href*="interior-experience.css"]')){const layer=document.createElement('link');layer.rel='stylesheet';layer.href='/cr-plumbing/assets/interior-experience.css?v=20261026-03';document.head.appendChild(layer)}
-  if(!document.querySelector('script[src*="interior-experience.js"]')){const module=document.createElement('script');module.src='/cr-plumbing/assets/interior-experience.js?v=20261027-p3-qa02';module.defer=true;document.body.appendChild(module)}
+  if(!document.querySelector('script[src*="interior-experience.js"]')){const module=document.createElement('script');module.src='/cr-plumbing/assets/interior-experience.js?v=20261104-shared-fixes';module.defer=true;document.body.appendChild(module)}
 }
 
 /* Shared How It Works photograph for source-backed service pages.
@@ -66,7 +66,7 @@ if(document.querySelector('.site-head')&&!document.querySelector('script[data-cr
   data.onload=()=>{
     if(!window.CR_NAV_DATA)return;
     const ui=document.createElement('script');
-    ui.src='/cr-plumbing/assets/nav-system.js?v=20261027-02';
+    ui.src='/cr-plumbing/assets/nav-system.js?v=20261104-shared-fixes';
     ui.dataset.crNavSystem='true';
     document.body.appendChild(ui);
   };
